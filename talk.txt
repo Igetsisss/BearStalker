@@ -1,0 +1,40 @@
+Leaving Oreagan pictures (cal state has sameish statue use that for reference when designing website)
+
+Get everything done by Presdident Day/<3 Day
+
+parents or alumni are interested maily
+
+geographical component
+facts about bears/ statues
+MAKE EDUCATIONAL!!!!!
+
+possibly no tracker
+(say where it is) (prefered GPS)
+
+Cant track truck (probably) ask company
+
+cant integrate into actual HIES website make own website
+
+BUDGET OF ??????
+
+dont know the company bear is being shipped with
+
+Name of family(s) paying for bear/ get photo of family(s) and discription of them (put next to educational facts of bears/ statues/ cal state bear statue)
+
+take photos of bear throughout its rout
+
+make backup plan for both tracking using GPS and an estimation of where it could be/ knowing its general path. (figure out its general path)
+
+Being shipped by truck AND NOT PLANEEEE!!!!!
+
+still possibly use flight radar???
+use flight radar as referance for what to make the website look like
+
+use game thing Phillip mentioned
+when you log into the website they can guess what state it is in and if they guess correctly their 
+advisory/grade gets points and the winner of the advisory/ grade gets a party
+
+little grey line where the bear HAS traveled
+
+make map very interactive (use google's API for google maps)
+
