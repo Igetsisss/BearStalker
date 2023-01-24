@@ -41,7 +41,7 @@
 
 
 var myIcon = L.icon({
-    iconUrl: 'https://iili.io/HlkEM37.png',
+    iconUrl: 'https://iili.io/Hlml3AX.png',
     iconSize: [38, ],
     iconAnchor: [22, 35],
     popupAnchor: [22, 94],
