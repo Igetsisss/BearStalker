@@ -1,2 +1,4 @@
-# BearStalker
-We stalk bears that's literally it
+# BearTracker
+We Track bears that's literally it
+
+By Jack Underwood
