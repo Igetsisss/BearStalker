@@ -1,14 +1,14 @@
 function initialize() {
   var map = new google.maps.Map(
     document.getElementById("map"), {
-      zoom: 4,
+      zoom: 5,
       zoomControl: true,
       mapTypeControl: false,
       scaleControl: true,
       streetViewControl: false,
       rotateControl: true,
       fullscreenControl: false,
-      center: new google.maps.LatLng(36.1031544, -86.816753),
+      center: new google.maps.LatLng(39.8097343, -98.5556199),
       mapTypeId: google.maps.MapTypeId.ROADMAP
       
     });
