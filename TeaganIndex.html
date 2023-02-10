@@ -1,0 +1,447 @@
+
+
+<!DOCTYPE html>
+
+
+<head>
+
+   
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>
+
+   
+
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About the Stops</a>
+        <a href="http://127.0.0.1:3000/Meet the team">Meet the team</a>
+        <a href="https://hies.org">HIES homepage</a>
+        <a href="https://hies.myschoolapp.com/app">MyHIES</a>
+      </div>
+      
+      <button class="openbtn" onclick="openNav()">&#9776; Extra Info</button>
+      <h2></h2>
+      <p></p>
+      <div> </div>
+      <div id="overlay"></div>
+</head>
+<style>
+    .timer{
+  background-color: rgb(134, 38, 51);
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 35px;
+  border-radius: 0%;
+  z-index: 100;
+  font-variant-position: normal;
+  margin: 0px;
+  padding: 0px;
+  color: white;
+}
+
+
+
+
+
+/* The sidepanel menu */
+.sidepanel {
+  height: 250px; /* Specify a height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 10; /* Stay on top */
+  top: 5;
+  right: 100;
+  background-color: rgb(99, 27, 37); /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+  
+}
+
+/* The sidepanel links */
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: rgb(255 ,199 ,44);
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidepanel a:hover {
+  color: rgb(134, 38, 51);
+}
+
+/* Position and style the close button (top right corner) */
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style the button that is used to open the sidepanel */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color:  rgb(134, 38, 51);
+  color: rgb(255, 255, 255);
+  padding: 10px 15px;
+  border: none;
+  top: 10px;
+  z-index: 2;
+}
+
+.openbtn:hover {
+  background-color: rgb(99, 27, 37);
+}
+
+#map{
+    
+    
+    z-index: 0;
+    height: 96vh;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+
+}
+
+
+
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+</style>
+
+</div>
+
+
+<body>
+ 
+  <div class="timer">
+    <p id="demo"></p>
+   </div>
+
+    <div id="map">
+    </div>
+
+
+   
+</body>
+
+<script>
+  
+  //so we can see the map/ what makes it interactive
+    var map = L.map('map').setView([40, -99], 4);
+
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+
+
+
+
+
+
+
+
+//markers (theres gonna be alot lmao be prepared)
+
+
+//marker for bear den
+var marker = L.marker([43, -120]).addTo(map);
+    marker.bindPopup("Bear Den");
+
+    function onMapClick(e) {
+            var popup = e.target.getPopup();
+
+
+            $.ajax({
+                iconUrl: "https://uca063b13872f973ef645d06ed2d.previews.dropboxusercontent.com/p/thumb/ABzjBmGGQXME8BfWlmaTjz-x9p-3KwotfNtTgafK1gtYNpMU8DFUM4uH3KKYWcpx4VaIzLKypvfvg18cvE46XG4CxUTJ3QW6t5j1q62eIXB0Pb0gibNTEiYe7BuMHItfHobyewLO_Cn-r9JIm-er93Fe-jkRhapxMJLuM77AQsvwPatPLmBWyixkqGXriAFamqAjYgoIUUomnEon2xFOt7fz0ytga4NlsmzaowFvxh0ltWx4JAo3J-BaDiJAldYdDf2qXnhRFh6CFWSO3aMuzvQndbxn4zJlcNuPLIrEg-PHovZfTf5PmOb2BgMBipEyCVXfVqy-Sh5exvspg_2I9iJnOA15Tdsqpl901JtYg-GSKA5gIMOncNiEJjXR-mlPvuU/p.png",
+                })
+                .done(function( data ) {
+                    alert( data );
+                    popup.setContent( data );
+                    popup.update();
+                    })
+                .fail(function( data ) {
+                    alert( 'FAIL: ' + data );
+
+                    });
+            };
+
+    marker.on('click', onMapClick );
+
+//Las Vegas, Nevada 
+var marker = L.marker([35.7, -115.3]).addTo(map);
+    marker.bindPopup("Las Vegas");
+
+    function onMapClick(e) {
+            var popup = e.target.getPopup();
+
+
+            $.ajax({
+                iconUrl: "https://iili.io/Hlml3AX.png",
+                })
+                .done(function( data ) {
+                    alert( data );
+                    popup.setContent( data );
+                    popup.update();
+                    })
+                .fail(function( data ) {
+                    alert( 'FAIL: ' + data );
+
+                    });
+            };
+
+    marker.on('click', onMapClick );
+//Houston, Texas
+var marker = L.marker([32.7, -97]).addTo(map);
+    marker.bindPopup("Dallas");
+
+    function onMapClick(e) {
+            var popup = e.target.getPopup();
+
+
+            $.ajax({
+                iconUrl: "https://iili.io/Hlml3AX.png",
+                })
+                .done(function( data ) {
+                    alert( data );
+                    popup.setContent( data );
+                    popup.update();
+                    })
+                .fail(function( data ) {
+                    alert( 'FAIL: ' + data );
+
+                    });
+            };
+
+    marker.on('click', onMapClick );
+
+    //grand canyon 
+    var marker = L.marker([35.9, -113]).addTo(map);
+    marker.bindPopup("Grand Canyon");
+
+    function onMapClick(e) {
+            var popup = e.target.getPopup();
+
+
+            $.ajax({
+                iconUrl: "https://iili.io/Hlml3AX.png",
+                })
+                .done(function( data ) {
+                    alert( data );
+                    popup.setContent( data );
+                    popup.update();
+                    })
+                .fail(function( data ) {
+                    alert( 'FAIL: ' + data );
+
+                    });
+            };
+
+//HIES 
+var marker = L.marker([33.5, -84.5]).addTo(map);
+    marker.bindPopup("Holy Innocents");
+
+    function onMapClick(e) {
+            var popup = e.target.getPopup();
+
+
+            $.ajax({
+                iconUrl: "https://iili.io/Hlml3AX.png",
+                })
+                .done(function( data ) {
+                    alert( data );
+                    popup.setContent( data );
+                    popup.update();
+                    })
+                .fail(function( data ) {
+                    alert( 'FAIL: ' + data );
+
+                    });
+            };
+//Dinsey World
+ var marker = L.marker([28, -81.7]).addTo(map);
+    marker.bindPopup("Disney World");
+
+    function onMapClick(e) {
+            var popup = e.target.getPopup();
+
+
+            $.ajax({
+                iconUrl: "https://iili.io/Hlml3AX.png",
+                })
+                .done(function( data ) {
+                    alert( data );
+                    popup.setContent( data );
+                    popup.update();
+                    })
+                .fail(function( data ) {
+                    alert( 'FAIL: ' + data );
+
+                    });
+            };
+
+//rocky mountian national park
+
+var marker = L.marker([43, -108]).addTo(map);
+    marker.bindPopup("Rocky Mountain National Park");
+
+    function onMapClick(e) {
+            var popup = e.target.getPopup();
+
+
+            $.ajax({
+                iconUrl: "https://iili.io/Hlml3AX.png",
+                })
+                .done(function( data ) {
+                    alert( data );
+                    popup.setContent( data );
+                    popup.update();
+                    })
+                .fail(function( data ) {
+                    alert( 'FAIL: ' + data );
+
+                    });
+            };
+    marker.on('click', onMapClick );
+//New Orleans 
+var marker = L.marker([29.5, -91]).addTo(map);
+    marker.bindPopup("New Orleans");
+
+    function onMapClick(e) {
+            var popup = e.target.getPopup();
+
+
+            $.ajax({
+                iconUrl: "https://iili.io/Hlml3AX.png",
+                })
+                .done(function( data ) {
+                    alert( data );
+                    popup.setContent( data );
+                    popup.update();
+                    })
+                .fail(function( data ) {
+                    alert( 'FAIL: ' + data );
+
+                    });
+            };
+            marker.on('click', onMapClick );
+//LA
+var marker = L.marker([34, -118]).addTo(map);
+    marker.bindPopup("Los Angeles");
+
+    function onMapClick(e) {
+            var popup = e.target.getPopup();
+
+
+            $.ajax({
+                iconUrl: "https://iili.io/Hlml3AX.png",
+                })
+                .done(function( data ) {
+                    alert( data );
+                    popup.setContent( data );
+                    popup.update();
+                    })
+                .fail(function( data ) {
+                    alert( 'FAIL: ' + data );
+
+                    });
+            };
+
+    marker.on('click', onMapClick );
+//Albuquerque
+    var marker = L.marker([35., -106.7]).addTo(map);
+    marker.bindPopup("Albuquerque(walter white)");
+
+    function onMapClick(e) {
+            var popup = e.target.getPopup();
+
+
+            $.ajax({
+                iconUrl: "https://iili.io/Hlml3AX.png",
+                })
+                .done(function( data ) {
+                    alert( data );
+                    popup.setContent( data );
+                    popup.update();
+                    })
+                .fail(function( data ) {
+                    alert( 'FAIL: ' + data );
+
+                    });
+            };
+
+    marker.on('click', onMapClick );
+
+
+
+
+//timer 
+// Set the date we're counting down to
+var countDownDate = new Date("Mar 5, 2023").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = " The bear is in the den";
+  }
+}, 1000);
+
+//Java script for the side panel 
+
+/* Set the width of the sidebar to 250px (show it) */
+function openNav() {
+  document.getElementById("mySidepanel").style.width = "250px";
+}
+
+/* Set the width of the sidebar to 0 (hide it) */
+function closeNav() {
+  document.getElementById("mySidepanel").style.width = "0";
+}
+
+</script>
+
+
