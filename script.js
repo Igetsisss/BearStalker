@@ -9,12 +9,12 @@ function initialize() {
       rotateControl: true,
       fullscreenControl: false,
       center: new google.maps.LatLng(39.8097343, -98.5556199),
-      mapTypeId: google.maps.MapTypeId.HYBRID
+      mapTypeId: google.maps.MapTypeId.ROADMAP
       
     });
   var directionsService = new google.maps.DirectionsService();
   var polyline = new google.maps.Polyline();
-   
+
   // Create the request object for the DirectionsService
   var request = {
     origin: new google.maps.LatLng(45.5011493, -122.8064663),
@@ -31,14 +31,12 @@ function initialize() {
       polyline.setMap(map);
     }
   });
-  
  var image =
-    "https://iili.io/HEKuNMN.png";
+    "https://iili.io/H1mtvtf.png";
   var beachMarker = new google.maps.Marker({
     position: { lat: 36.083370, lng: -115.1729976 },
     map,
     icon: image,
-    
   
   });
   map.addListener("center_changed", () => {
@@ -53,7 +51,6 @@ function initialize() {
     document.getElementById("main").style.marginRight = "500px";
     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
-
 //openNav()
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
@@ -66,5 +63,4 @@ function closeNav() {
     openNav()
     });
 }
-
 google.maps.event.addDomListener(window, "load", initialize);
