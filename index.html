@@ -113,16 +113,4 @@ function closeNav() {
   }
  
  </script>
-<script type="text/javascript">
-  var element = new Image;
-  var devtoolsOpen = false;
-  element.__defineGetter__("id", function() {
-      devtoolsOpen = true; // This only executes when devtools is open.
-      alert("teagun get out me code")
-  });
-  setInterval(function() {
-      devtoolsOpen = false;
-      console.log(element);
-      document.getElementById('output').innerHTML += (devtoolsOpen ? "dev tools is open\n" : "dev tools is closed\n");
-  }, 1000);
-</script>
+
