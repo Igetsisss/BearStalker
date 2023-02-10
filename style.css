@@ -12,21 +12,22 @@ height: 100%;
 }
 
 #naved{
+    background-color: rgb(134, 37, 51);
+    font-family: 'Bebas Neue', cursive;
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    height: 7vh;
+    
+}
+/*#nav{
     background-color: rgb(0, 0, 0);
     font-family: 'Bebas Neue', cursive;
     color: white;
     text-align: center;
-    font-size: 22px;
-    height: 2vh;
-}
-#nav{
-    background-color: rgb(0, 0, 0);
-    font-family: 'Bebas Neue', cursive;
-    color: white;
-    text-align: center;
-    font-size: 19px;
-    height: 2vh;
-}
+    font-size: 35px;
+    height: 4vh;
+}*/
 /*
 
 #naved { 
