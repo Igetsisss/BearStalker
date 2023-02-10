@@ -1,12 +1,5 @@
 <!DOCTYPE html>
 <head>
-  <title>Bear Tracker Beta</title>
-<link rel="icon" href="favicon.ico">
-<link rel="icon" type="image/x-icon" sizes="48x48" href="/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaj6QySYtOF3OzfCxa0h7j1Do9vNUY2yU"></script>
 <link rel="stylesheet" type="text/css" href="style.css" />
 <script src="script.js"></script>
@@ -14,11 +7,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head> 
+<!-- https://iili.io/HE1ORig.png-->
 <div id="naved">The Bear Arrives in:</div>
-<div id="nav"></div>
+
 
 <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="javascript:void(0)" class="closebtn" onclick="zommout()" onclick="closeNav()">&times;</a>
   <h1 id="sidenavhead">
   Current Location: Las Vegas, Nevada
 
@@ -82,7 +76,7 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display the result in the element with id="demo"
-  document.getElementById("nav").innerHTML = days + "d " + hours + "h "
+  document.getElementById("naved").innerHTML = "The Bear Arrives in: " + days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
 
   // If the count down is finished, write some text
@@ -108,9 +102,8 @@ function closeNav() {
  </script>
  <script>
   function zommout() {
-    map.setZoom(8);
+    map.setZoom(7);
     map.setCenter(beachMarker.getPosition());
   }
  
  </script>
-
