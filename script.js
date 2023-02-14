@@ -8,8 +8,10 @@ function initialize() {
       streetViewControl: false,
       rotateControl: true,
       fullscreenControl: false,
+      gestureHandling: "greedy",
       center: new google.maps.LatLng(39.8097343, -98.5556199),
       mapTypeId: google.maps.MapTypeId.ROADMAP
+      
       
     });
   var directionsService = new google.maps.DirectionsService();
@@ -17,7 +19,7 @@ function initialize() {
 
   // Create the request object for the DirectionsService
   var request = {
-    origin: new google.maps.LatLng(45.5011493, -122.8064663), // 1
+    origin: new google.maps.LatLng(45.501240, -122.806091), // 1
     
     destination: new google.maps.LatLng(36.056595, -112.125198),
     waypoints: [{location: new google.maps.LatLng(34.052235, -118.243683), stopover: false},
@@ -66,44 +68,73 @@ function initialize() {
       map.panTo(marker.getPosition());
     }, 5000);
   });
+  function closeallNav(){
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("mySidenav2").style.width = "0";
+    document.getElementById("mySidenav3").style.width = "0";
+    document.body.style.backgroundColor = "white";
+    document.getElementById("main").style.marginRight= "0";
+    
+  }
    function openNav() {
+    
+    document.getElementById("mySidenav2").style.width = "0";
+    document.getElementById("mySidenav3").style.width = "0";
     document.getElementById("mySidenav").style.width = "500px";
     document.getElementById("main").style.marginRight = "500px";
     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
 function open2Nav() {
+  document.getElementById("mySidenav").style.width = "0";
+
+  document.getElementById("mySidenav3").style.width = "0";
+
   document.getElementById("mySidenav2").style.width = "500px";
   document.getElementById("main").style.marginRight = "500px";
   document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
 //openNav()
 function close2Nav() {
-    document.getElementById("mySidenav2").style.width = "0";
+  
     document.getElementById("main").style.marginRight= "0";
     document.body.style.backgroundColor = "white";
+    document.getElementById("mySidenav2").style.width = "0";
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("mySidenav3").style.width = "0";
+
 }
 function open3Nav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("mySidenav2").style.width = "0";
+  
   document.getElementById("mySidenav3").style.width = "500px";
   document.getElementById("main").style.marginRight = "500px";
   document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+  close2Nav();
 }
 //openNav()
 function close3Nav() {
     document.getElementById("mySidenav3").style.width = "0";
     document.getElementById("main").style.marginRight= "0";
     document.body.style.backgroundColor = "white";
+    document.getElementById("mySidenav2").style.width = "0";
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("mySidenav3").style.width = "0";
 }
   beachMarker.addListener("click", () => {
     map.setZoom(7);
     map.setCenter(beachMarker.getPosition());
+    
     openNav()
     });
     
 
 Marker.addListener("click", () => {
+  
   map.setZoom(7);
   map.setCenter(Marker.getPosition());
   open2Nav()
+  
   });
   
   currentMarker.addListener("click", () => {
