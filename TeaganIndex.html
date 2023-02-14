@@ -1,5 +1,7 @@
 
 
+
+
 <!DOCTYPE html>
 
 
@@ -130,6 +132,17 @@
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
 }
+
+h1 {
+font-size: 15px;
+
+}
+
+b {
+
+  font-size: 10px;
+  
+}
 </style>
 
 </div>
@@ -162,23 +175,19 @@
 
 
 
-
-
-
-
-//markers (theres gonna be alot lmao be prepared)
+//markers (theres gonna be alot lol be prepared)
 
 
 //marker for bear den
 var marker = L.marker([43, -120]).addTo(map);
-    marker.bindPopup("Bear Den");
+    marker.bindPopup("<h1>Bear Den<h1> <b>This is where the bear is being made, and where it will be shipped out from.   <b>");
 
     function onMapClick(e) {
             var popup = e.target.getPopup();
 
 
             $.ajax({
-                iconUrl: "https://uca063b13872f973ef645d06ed2d.previews.dropboxusercontent.com/p/thumb/ABzjBmGGQXME8BfWlmaTjz-x9p-3KwotfNtTgafK1gtYNpMU8DFUM4uH3KKYWcpx4VaIzLKypvfvg18cvE46XG4CxUTJ3QW6t5j1q62eIXB0Pb0gibNTEiYe7BuMHItfHobyewLO_Cn-r9JIm-er93Fe-jkRhapxMJLuM77AQsvwPatPLmBWyixkqGXriAFamqAjYgoIUUomnEon2xFOt7fz0ytga4NlsmzaowFvxh0ltWx4JAo3J-BaDiJAldYdDf2qXnhRFh6CFWSO3aMuzvQndbxn4zJlcNuPLIrEg-PHovZfTf5PmOb2BgMBipEyCVXfVqy-Sh5exvspg_2I9iJnOA15Tdsqpl901JtYg-GSKA5gIMOncNiEJjXR-mlPvuU/p.png",
+                url: "https://hies.myschoolapp.com/ftpimages/219/download/download_8262433.png",
                 })
                 .done(function( data ) {
                     alert( data );
@@ -190,19 +199,21 @@ var marker = L.marker([43, -120]).addTo(map);
 
                     });
             };
+
+    marker.on('click', onMapClick );
 
     marker.on('click', onMapClick );
 
 //Las Vegas, Nevada 
 var marker = L.marker([35.7, -115.3]).addTo(map);
-    marker.bindPopup("Las Vegas");
+    marker.bindPopup("<h1>Las Vegas<h1> <b>Elevation - Approximately 2,030 ft (620 m) above sea level. Population - 646,790 Known for - Gambling, shopping, fine dining, entertainment, and nightlife. Sports teams - Vegas Golden Knights. Mayor - Carolyn Goodman. </b>");
 
     function onMapClick(e) {
             var popup = e.target.getPopup();
 
 
             $.ajax({
-                iconUrl: "https://iili.io/Hlml3AX.png",
+                url: "https://hies.myschoolapp.com/ftpimages/219/download/download_8262433.png",
                 })
                 .done(function( data ) {
                     alert( data );
@@ -216,9 +227,11 @@ var marker = L.marker([35.7, -115.3]).addTo(map);
             };
 
     marker.on('click', onMapClick );
+
+    
 //Houston, Texas
 var marker = L.marker([32.7, -97]).addTo(map);
-    marker.bindPopup("Dallas");
+    marker.bindPopup("<h1> Dallas </h1> <b> - Elevation: 420′ Feet  - Population: 1.288 million (2021)- Number of bears: The number of bears in Texas is rare but there is a population of black Bears living in the Big Bend National Park. National Park Services estimates 30-40 black bears are living there.  - Known for?: Dallas today is a cosmopolitan city known for its high concentration of restaurants and bears. Skyscrapers, such as Bank of America Plaza (1985) and Reunion Tower (1978), create a striking night skyline.- Dallas is the ninth most populous city in the country. Initially, the city of Dallas, Texas developed thanks to the construction of major railroad lines that allowed access to cotton, cattle, and later oil.  - Sports Team: Dallas Cowboys, Dallas Mavericks, Dallas Stars, Dallas Jackals, Dallas Wings, and FC Dallas.- Mayor: Eric Johnson- Landmarks:   </b> ");
 
     function onMapClick(e) {
             var popup = e.target.getPopup();
@@ -242,7 +255,7 @@ var marker = L.marker([32.7, -97]).addTo(map);
 
     //grand canyon 
     var marker = L.marker([35.9, -113]).addTo(map);
-    marker.bindPopup("Grand Canyon");
+    marker.bindPopup("<h1>Grand Canyon</h1> <b>Elevation- 6,804-, Yealy visitors- 5.9 million,How was it created- Techtonics uplifts and erosion, Where is it- northwest Arizona,When did it become a national park- February 26, 1919 </b>");
 
     function onMapClick(e) {
             var popup = e.target.getPopup();
@@ -264,7 +277,7 @@ var marker = L.marker([32.7, -97]).addTo(map);
 
 //HIES 
 var marker = L.marker([33.5, -84.5]).addTo(map);
-    marker.bindPopup("Holy Innocents");
+    marker.bindPopup("<h1> Holy Innocents</h1> <b>Elevation:  738′- Population: 6,000,000- The number of bears: 5,100 statewide- Known for?:  Atlanta is known as a major business city. It is the home of Coca-Cola Company, CNN, AT&T, and Home Depot, as well as many other Fortune 500 companies. Atlanta's airport, called Hartsfield-Jackson International Airport, is the busiest airport in the world.- ​Sports teams: Atlanta Braves, Atlanta Falcons, Atlanta Hawkes, Atlanta United, Georgia Swarm.- Mayor: Andre Dickens- Famous Landmarks: World of Coca-Cola, Piedmont Park, Zoo Atlanta, High museum of Art, Mercedes Benz Stadium, Stone Mountain                                                                                                                                                                                    ​ </b> ");
 
     function onMapClick(e) {
             var popup = e.target.getPopup();
@@ -285,7 +298,7 @@ var marker = L.marker([33.5, -84.5]).addTo(map);
             };
 //Dinsey World
  var marker = L.marker([28, -81.7]).addTo(map);
-    marker.bindPopup("Disney World");
+    marker.bindPopup("<h1> Disney World</h1> <b>Elevation - 102 ft / 31 m,Yearly visitors – About 12 million people.,How was it created - Walt Disney wanted to build another park in Florida, based on Disneyland. ,When did it become a park - October 1, 1971 </b> ");
 
     function onMapClick(e) {
             var popup = e.target.getPopup();
@@ -308,7 +321,7 @@ var marker = L.marker([33.5, -84.5]).addTo(map);
 //rocky mountian national park
 
 var marker = L.marker([43, -108]).addTo(map);
-    marker.bindPopup("Rocky Mountain National Park");
+    marker.bindPopup("<h1>Rocky Mountain National Park</h1> <b> Mount Elbert is the Rocky Mountains' tallest peak. It is 14,439 feet above sea level. It has existed for around 1.7 billion years. The Rocky mountains are still growing today. The Rocky mountains is one of the nation's highest national parks. The Rocky Mountain's Bear population is 20-30. The Rocky Mountains stretch from Canada to New Mexico. The Rocky Mountains became a national park in 1915.  The Rocky Mountains formed about 285 million years ago. There are 4.5 million visitors who visit the Rocky Mountains each year. ​-The park was established in 1915 when President Woodrow Wilson signed the Rocky Mountain National Park Act.​-Denver welcomed 31.7 total visitors in 2021-Elevation - elevations from 7,860 feet to 14,259 feet- </b>");
 
     function onMapClick(e) {
             var popup = e.target.getPopup();
@@ -330,7 +343,7 @@ var marker = L.marker([43, -108]).addTo(map);
     marker.on('click', onMapClick );
 //New Orleans 
 var marker = L.marker([29.5, -91]).addTo(map);
-    marker.bindPopup("New Orleans");
+    marker.bindPopup("<h1> New Orleans </h1> <b> Elevation: 6.562′- Population: 376,971 (2021)- How many bears live there: about 700 black bearsin New orleans and the surrounding area- Known for?: distinctive music, Creole cuisine, unique dialects, and its annual celebrations and festivals, most notably Mardi Gras.- Sports teams: New Orleans Pelicans(Basketball), New Orleans Saints(Football), - Mayor: LaToya Cantrell- Famous Landmarks: Audobon Zoo, National WWII Museum, Museum of Art, City Park, Audobon Aquarium</b> " );
 
     function onMapClick(e) {
             var popup = e.target.getPopup();
@@ -350,9 +363,9 @@ var marker = L.marker([29.5, -91]).addTo(map);
                     });
             };
             marker.on('click', onMapClick );
-//LA
-var marker = L.marker([34, -118]).addTo(map);
-    marker.bindPopup("Los Angeles");
+//Devnver 
+var marker = L.marker([42, -106]).addTo(map);
+    marker.bindPopup("<h1>Denver</h1> <b>Denver the capital of Colorado -  Denver is situated at a high altitude of 5,280 feet above sea level- 2,931,000- In Colorado between 17,000-20,000 bears live in the state with an estimated amount of 3,614 bear reports in the last yea- - Denver is famous for its collection of world-class museums, historical landmarks, and natural beauty being home to the Rocky mountains- s - Denver Broncos football, Denver Nuggets basketball, Colorado Rockies baseball and Colorado Avalanche hockey- - Michael B Hancock has been mayor since 2011- – With over 431.7 million visitors every year.</b>");
 
     function onMapClick(e) {
             var popup = e.target.getPopup();
@@ -373,9 +386,9 @@ var marker = L.marker([34, -118]).addTo(map);
             };
 
     marker.on('click', onMapClick );
-//Albuquerque
-    var marker = L.marker([35., -106.7]).addTo(map);
-    marker.bindPopup("Albuquerque(walter white)");
+//Pheonix
+    var marker = L.marker([33, -112]).addTo(map);
+    marker.bindPopup("<H1>Pheonix</h1> <b>The elevation is 1,086 feet.-The population is around 1.625 million.-there are 13 bears in phoenix Arizona.-Over 19 million people visit phoenix Arizona each year.-Kate Gallego is the mayor-People may know it for its year-round sun, desert beauty, and world-class resorts and golf, but as the fifth-largest city in the U.S., it also offers sophisticated urbanscapes, southwest culture and lots of outdoor adventure.- Sports teams: Phoenix Suns,  Phoenix Mercury, Arizona Diamond Backs, Arizona Coyotes, Arizona Caridnals </b>  ");
 
     function onMapClick(e) {
             var popup = e.target.getPopup();
@@ -396,7 +409,29 @@ var marker = L.marker([34, -118]).addTo(map);
             };
 
     marker.on('click', onMapClick );
+//Los Angeles
+var marker = L.marker([33.7, -118.2]).addTo(map);
+    marker.bindPopup("<H1>Los Angeles</h1> <b>Elevation- 305- Population- 3.849-How many bears live here- About 150 to 500 black bears- Known for- Tv and movie industries- Sports teams- Los Angeles Lakers, LA rams, LA Chargers, LA Clippers, LA Dodgers- Mayor- Karen Bass</b>  ");
 
+    function onMapClick(e) {
+            var popup = e.target.getPopup();
+
+
+            $.ajax({
+                iconUrl: "https://iili.io/Hlml3AX.png",
+                })
+                .done(function( data ) {
+                    alert( data );
+                    popup.setContent( data );
+                    popup.update();
+                    })
+                .fail(function( data ) {
+                    alert( 'FAIL: ' + data );
+
+                    });
+            };
+
+    marker.on('click', onMapClick );
 
 
 
@@ -443,5 +478,7 @@ function closeNav() {
 }
 
 </script>
+
+
 
 
