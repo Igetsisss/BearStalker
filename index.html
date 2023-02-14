@@ -7,12 +7,23 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head> 
-<!-- https://iili.io/HE1ORig.png-->
-<div id="naved">The Bear Arrives in:</div>
 
+<!-- https://iili.io/HE1ORig.png-->
+<div id="naved">  <img src="https://iili.io/HEbyqhl.png" 
+  width="60" 
+  height="60" id="logo"/> <span id="countdown"> The Bear Arrives in:  </span>
+
+ 
+
+
+</div>
+
+
+
+<!--LAS VEGAS-->
 
 <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeallNav()">&times;</a>
   <h1 id="sidenavhead">
   Past Location: Las Vegas, Nevada
 
@@ -41,21 +52,29 @@
 <li> Known for - Gambling, shopping, fine dining, entertainment, and nightlife​</li>
   <br>
   <br>
-<li>Sports teams - Vegas Golden Knights​</li>
+<li>Sports teams - Vegas Golden Knights​ and Raiders​</li>
   <br>
   <br>
 <li> Mayor - Carolyn Goodman​</li>
   <br>
   <br>
-<li> Famous landmark - The Volcano</li>
+<li>  Welcome to Vegas sign, The strip, Bellagio Fountains​</li>
   <br>
   </h2>
 </ul>
+<br>
+<br>
 </div>
 
 
+
+
+<!--LOS ANGELOS-->
+
+
+
 <div id="mySidenav2" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="close2Nav()">&times;</a>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeallNav()">&times;</a>
   <h1 id="sidenavhead">
   Past Location: Los Angeles, California
 
@@ -71,17 +90,14 @@
   <h1 id="jackcool"> Info</h1>
   <hr>
   <h2 id="panelinfo">
-    <br>
-    <br>
-   <li>
-
+   
   
-    Elevation- 305'​
+    ​<li>
+    Population- 3.849 million​
   </li>
   <br>
   <br>
-    Population- 3.849​
-    <li>
+  <li>
     How many bears live here- About 150 to 500 black bears​
   </li>
   <br>
@@ -92,23 +108,34 @@
   <br>
   <br>
   <li>
-    Sports teams- Los Angeles Lakers, LA rams, LA Chargers, LA Clippers, LA Dodgers​
+    Sports teams- Los Angeles Lakers, LA rams, LA Chargers, LA Clippers, LA Dodgers, LA Angels, La Kings, LA Galaxy​
   </li>
-  <br>
-  <br>
-<li>
+  <li>
     Mayor- Karen Bass​
   </li>
+  <br>
+  <br>
+  <li>
+    Landmarks- Walt Disney Concert Hall​
+  </li>
+  <br>
+  <br>
+  <li>
+    Griffth Observatory, The Getty, Universal Studio
+  </li>
+  
+
+
   <br>
   <br>
 </div>
 
 
-
+<!--GRAND CANYON-->
 
 
 <div id="mySidenav3" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="close3Nav()">&times;</a>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeallNav()">&times;</a>
   <h1 id="sidenavhead">
  Current Location: Grand Canyon, Arizona
 
@@ -124,8 +151,8 @@
   <h1 id="jackcool"> Info</h1>
   <hr>
   <h2 id="panelinfo">
-    <br>
-  <br>
+ 
+
   <li>
     Elevation- 6,804​
   </li>
@@ -149,7 +176,8 @@
   <li>
     When did it become a national park- February 26, 1919
   </li>
-  
+  <br>
+  <br>
 </div>
 
 
@@ -180,7 +208,7 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display the result in the element with id="demo"
-  document.getElementById("naved").innerHTML = "The Bear Arrives in: " + days + "d " + hours + "h "
+  document.getElementById("countdown").innerHTML = "The Bear Arrives in: " + days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
 
   // If the count down is finished, write some text
@@ -189,23 +217,38 @@ var x = setInterval(function() {
     document.getElementById("nav").innerHTML = "EXPIRED";
   }
 }, 1000);
+
 </script>
- <script>
- 
+
+<script>
+ function closeallNav(){
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("mySidenav2").style.width = "0";
+  document.getElementById("mySidenav3").style.width = "0";
+  document.body.style.backgroundColor = "white";
+  document.getElementById("main").style.marginRight= "0";
+}
  function openNav() {
+    closeallNav()
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("main").style.marginRight = "250px";
     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
+</script>
+<!--
 //openNav()
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginRight= "0";
     document.body.style.backgroundColor = "white";
+    document.getElementById("mySidenav2").style.width = "0";
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("mySidenav3").style.width = "0";
 }
 
 
 function open2Nav() {
+  closeallNav()
     document.getElementById("mySidenav2").style.width = "250px";
     document.getElementById("main").style.marginRight = "250px";
     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
@@ -215,18 +258,27 @@ function close2Nav() {
     document.getElementById("mySidenav2").style.width = "0";
     document.getElementById("main").style.marginRight= "0";
     document.body.style.backgroundColor = "white";
+    document.getElementById("mySidenav2").style.width = "0";
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("mySidenav3").style.width = "0";
 }
 function open3Nav() {
+    closeallNav()
     document.getElementById("mySidenav3").style.width = "250px";
     document.getElementById("main").style.marginRight = "250px";
     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    
 }
 //openNav()
 function close3Nav() {
     document.getElementById("mySidenav3").style.width = "0";
     document.getElementById("main").style.marginRight= "0";
     document.body.style.backgroundColor = "white";
+    document.getElementById("mySidenav2").style.width = "0";
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("mySidenav3").style.width = "0";
 }
+
  </script>
  <script>
  
