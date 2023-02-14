@@ -1,7 +1,7 @@
 html,
 body,
 #map {
-  height: 96vh;
+  height: 93vh;
   width: 100%;
   margin: 0px;
   padding: 0px;
@@ -12,13 +12,25 @@ height: 100%;
 }
 
 #naved{
-    background-color: rgb(134, 37, 51);
+    background-color: rgb(112, 31, 44);
     font-family: 'Bebas Neue', cursive;
     color: white;
     text-align: center;
     font-size: 50px;
     height: 7vh;
+   
     
+}
+
+
+#logo{
+  background-color: transparent;
+  border: 0;
+  position: absolute;
+  left:0;
+  top:0; 
+  padding-left: 1%;
+  
 }
 /*#nav{
     background-color: rgb(0, 0, 0);
@@ -117,6 +129,7 @@ height: 100%;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
+    color: rgb(127, 58, 58);
 }
 
 #main {
