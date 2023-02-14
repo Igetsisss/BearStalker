@@ -14,7 +14,7 @@
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <h1 id="sidenavhead">
-  Current Location: Las Vegas, Nevada
+  Past Location: Las Vegas, Nevada
 
   </h1>
   <hr>
@@ -52,6 +52,110 @@
   </h2>
 </ul>
 </div>
+
+
+<div id="mySidenav2" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="close2Nav()">&times;</a>
+  <h1 id="sidenavhead">
+  Past Location: Los Angeles, California
+
+  </h1>
+  <hr>
+  <h2>
+    
+  </h2>
+  <img src="https://cdn.britannica.com/22/154122-050-B1D0A7FD/Skyline-Los-Angeles-California.jpg"
+  width="500px" 
+  height="300px" id="panelimg">
+  <ul>
+  <h1 id="jackcool"> Info</h1>
+  <hr>
+  <h2 id="panelinfo">
+    <br>
+    <br>
+   <li>
+
+  
+    Elevation- 305'​
+  </li>
+  <br>
+  <br>
+    Population- 3.849​
+    <li>
+    How many bears live here- About 150 to 500 black bears​
+  </li>
+  <br>
+  <br>
+  <li>
+    Known for- Tv and movie industries​
+  </li>
+  <br>
+  <br>
+  <li>
+    Sports teams- Los Angeles Lakers, LA rams, LA Chargers, LA Clippers, LA Dodgers​
+  </li>
+  <br>
+  <br>
+<li>
+    Mayor- Karen Bass​
+  </li>
+  <br>
+  <br>
+</div>
+
+
+
+
+
+<div id="mySidenav3" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="close3Nav()">&times;</a>
+  <h1 id="sidenavhead">
+ Current Location: Grand Canyon, Arizona
+
+  </h1>
+  <hr>
+  <h2>
+    
+  </h2>
+  <img src="https://img.sunset02.com/sites/default/files/styles/marquee_large_2x/public/image/2016/09/main/best-of-the-west-sunset-100-grand-canyon-0613.jpg?itok=OWVUNFtf"
+  width="500px" 
+  height="300px" id="panelimg">
+  <ul>
+  <h1 id="jackcool"> Info</h1>
+  <hr>
+  <h2 id="panelinfo">
+    <br>
+  <br>
+  <li>
+    Elevation- 6,804​
+  </li>
+  <br>
+  <br>
+  <li>
+    Yealy visitors- 5.9 million​
+  </li>
+  <br>
+  <br>
+    <li>
+    How was it created- Techtonics uplifts and erosion​
+    </li>
+    <br>
+  <br>
+  <li>
+    Where is it- northwest Arizona​
+  </li>
+  <br>
+  <br>
+  <li>
+    When did it become a national park- February 26, 1919
+  </li>
+  
+</div>
+
+
+
+
+
 
 
 <div id="map"></div>
@@ -99,11 +203,32 @@ function closeNav() {
     document.getElementById("main").style.marginRight= "0";
     document.body.style.backgroundColor = "white";
 }
+
+
+function open2Nav() {
+    document.getElementById("mySidenav2").style.width = "250px";
+    document.getElementById("main").style.marginRight = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+//openNav()
+function close2Nav() {
+    document.getElementById("mySidenav2").style.width = "0";
+    document.getElementById("main").style.marginRight= "0";
+    document.body.style.backgroundColor = "white";
+}
+function open3Nav() {
+    document.getElementById("mySidenav3").style.width = "250px";
+    document.getElementById("main").style.marginRight = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+//openNav()
+function close3Nav() {
+    document.getElementById("mySidenav3").style.width = "0";
+    document.getElementById("main").style.marginRight= "0";
+    document.body.style.backgroundColor = "white";
+}
  </script>
  <script>
-  function zommout() {
-    map.setZoom(7);
-    map.setCenter(beachMarker.getPosition());
-  }
+ 
  
  </script>
