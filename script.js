@@ -10,7 +10,7 @@ function initialize() {
       fullscreenControl: false,
       gestureHandling: "greedy",
       center: new google.maps.LatLng(39.8097343, -98.5556199),
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      mapTypeId: google.maps.MapTypeId.HYBRID
       
       
     });
