@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+ @license
+ Copyright 2019 Google; LLC. All Rights Reserved.
+ SPDX-License-Identifier: Apache-2.0
+-->
+<html>
+  <head>
+    <script type="text/javascript" src="script.js"></script>
+    <style>
+        /**
+ * @license
+ * Copyright 2019 Google LLC. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0
+ */
+/* Set the size of the div element that contains the map */
+#map {
+  height: 730px; /* The height is 730 pixels */
+  width: 100%; /* The width is the width of the web page */
+}
+h3 {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    background: #FFC72C;
+}
+body {
+    background: #862633;
+}
+    </style>
+    <title>The Bear Tracker</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <!-- jsFiddle will insert css and js -->
+  </head>
+  <body>
+    <h3>Bear Tracker</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+
+    <!-- 
+      The `defer` attribute causes the callback to execute after the full HTML
+      document has been parsed. For non-blocking uses, avoiding race conditions,
+      and consistent behavior across browsers, consider loading using Promises
+      with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+      -->
+    <script
+    
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaj6QySYtOF3OzfCxa0h7j1Do9vNUY2yU&callback=initMap&v=weekly"
+      defer
+    ></script>
+  </body>
+
+</html>
