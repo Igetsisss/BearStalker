@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <body>
+        <style>
+
+body {
+    background-color: #862633;
+
+}
+h1 {
+    color: #FFC72C;
+    text-align: center;
+    font-family: Copperplate;
+}
+.button {
+  background-color: #FFC72C;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  margin: 0 auto;
+  display: grid;
+  color: #862633;
+  border-radius: 6px;
+  transition-duration: 0.4s;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.text-center {
+    text-align: center;
+}
+.button1:hover {
+  background-color: white;
+}
+.button2:hover {
+  background-color: white;
+}
+        
+    </style>
+    
+</head>
+
+<title>Bear Quiz</title>
+<h1>Bear Quiz</h1>
+
+<botton class="button button1">Start</botton>
+
+
+
+<P></P>
+
+<botton class="button button2">Back to Map</botton>
+
+</body>
+</html>
+
 
