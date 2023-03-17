@@ -3,7 +3,7 @@ function initialize() {
     document.getElementById("map"), {
       zoom: 5,
       zoomControl: true,
-      mapTypeControl: false,
+      mapTypeControl: true,
       scaleControl: true,
       streetViewControl: false,
       rotateControl: true,
