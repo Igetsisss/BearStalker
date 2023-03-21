@@ -19,11 +19,29 @@ function initialize() {
 
   // Create the request object for the DirectionsService
   var request = {
+    // oregon
     origin: new google.maps.LatLng(45.501240, -122.806091), // 1
     
-    destination: new google.maps.LatLng(36.056595, -112.125198),
+    //atlanta
+    destination: new google.maps.LatLng(33.90787057154466, -84.41525459289551),
+    //Los Angeles
     waypoints: [{location: new google.maps.LatLng(34.052235, -118.243683), stopover: false},
-      {location: new google.maps.LatLng(36.083370, -115.1729976), stopover: false}],
+      //Las Vegas​
+      {location: new google.maps.LatLng(36.083370, -115.1729976), stopover: false},
+      //Grand canyon
+      {location: new google.maps.LatLng(36.056595, -112.125198), stopover: false},
+      //saltlake
+      {location: new google.maps.LatLng(40.7608, -112.125198), stopover: false},
+      //rockys
+      {location: new google.maps.LatLng(44.463132159838196,  -109.01770422743095), stopover: false},
+      //denver
+      {location: new google.maps.LatLng(39.74077241922982,  -104.97440875285031), stopover: false},
+   
+      //dallas
+     {location: new google.maps.LatLng(32.7767, -96.7970), stopover: false},
+
+      //nashvile
+      {location: new google.maps.LatLng( 36.13063521329554, -86.79150842788147), stopover: false}],
     travelMode: google.maps.TravelMode.DRIVING
   };
 
@@ -39,18 +57,59 @@ function initialize() {
   //https://iili.io/H1mtvtf.png
  var image =
     "https://iili.io/HEDM13l.png";
-  var beachMarker = new google.maps.Marker({
+  var Marker1 = new google.maps.Marker({
     position: { lat: 36.083370, lng: -115.1729976 },
     map,
     icon: image,
   
   });
-  var Marker = new google.maps.Marker({
+  var Marker2 = new google.maps.Marker({
     position: { lat: 34.052235, lng: -118.243683 },
     map,
     icon: image,
   
   });
+  var Marker4 = new google.maps.Marker({
+    position: { lat: 40.7608, lng: -112.125198 },
+    map,
+    icon: image,
+  
+  });
+  var Marker5 = new google.maps.Marker({
+    position: { lat: 44.463132159838196, lng:-109.01770422743095 },
+    map,
+    icon: image,
+  
+  });
+  
+  var Marker6 = new google.maps.Marker({
+    position: { lat: 39.74077241922982, lng:-104.97440875285031 },
+    map,
+    icon: image,
+  
+  });
+
+  var Marker7 = new google.maps.Marker({
+    position: { lat: 32.7767, lng:-96.7970 },
+    map,
+    icon: image,
+  
+  });
+
+  var Marker8 = new google.maps.Marker({
+    position: { lat: 36.13063521329554, lng:-86.79150842788147 },
+    map,
+    icon: image,
+  
+  });
+  var Marker9 = new google.maps.Marker({
+    position: { lat: 33.90787057154466, lng:-84.41525459289551 },
+    map,
+    icon: image,
+  
+  });
+
+
   var image2 =
     "https://iili.io/H1mtvtf.png";
   var currentMarker = new google.maps.Marker({
@@ -72,71 +131,152 @@ function initialize() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("mySidenav2").style.width = "0";
     document.getElementById("mySidenav3").style.width = "0";
-    document.body.style.backgroundColor = "white";
-    document.getElementById("main").style.marginRight= "0";
+    document.getElementById("mySidenav4").style.width = "0";
+    document.getElementById("mySidenav5").style.width = "0";
+  document.getElementById("mySidenav6").style.width = "0";
+  document.getElementById("mySidenav7").style.width = "0";
+  document.getElementById("mySidenav8").style.width = "0";
+  document.getElementById("mySidenav9").style.width = "0";
+  
     
   }
    function openNav() {
     
-    document.getElementById("mySidenav2").style.width = "0";
-    document.getElementById("mySidenav3").style.width = "0";
+   closeallNav()
     document.getElementById("mySidenav").style.width = "500px";
     document.getElementById("main").style.marginRight = "500px";
     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
 function open2Nav() {
-  document.getElementById("mySidenav").style.width = "0";
-
-  document.getElementById("mySidenav3").style.width = "0";
-
+  closeallNav()
   document.getElementById("mySidenav2").style.width = "500px";
   document.getElementById("main").style.marginRight = "500px";
   document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
 //openNav()
-function close2Nav() {
-  
-    document.getElementById("main").style.marginRight= "0";
-    document.body.style.backgroundColor = "white";
-    document.getElementById("mySidenav2").style.width = "0";
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("mySidenav3").style.width = "0";
 
-}
 function open3Nav() {
-  document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("mySidenav2").style.width = "0";
-  
+  closeallNav()
   document.getElementById("mySidenav3").style.width = "500px";
   document.getElementById("main").style.marginRight = "500px";
   document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-  close2Nav();
+ 
 }
 //openNav()
-function close3Nav() {
-    document.getElementById("mySidenav3").style.width = "0";
-    document.getElementById("main").style.marginRight= "0";
-    document.body.style.backgroundColor = "white";
-    document.getElementById("mySidenav2").style.width = "0";
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("mySidenav3").style.width = "0";
+
+function open4Nav() {
+  closeallNav()
+  document.getElementById("mySidenav4").style.width = "500px";
+  document.getElementById("main").style.marginRight = "500px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+ 
 }
-  beachMarker.addListener("click", () => {
+
+function open5Nav() {
+  closeallNav()
+  document.getElementById("mySidenav5").style.width = "500px";
+  document.getElementById("main").style.marginRight = "500px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+  
+}
+function open6Nav() {
+  closeallNav()
+  document.getElementById("mySidenav6").style.width = "500px";
+  document.getElementById("main").style.marginRight = "500px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+ 
+}
+function open7Nav() {
+  closeallNav()
+  document.getElementById("mySidenav7").style.width = "500px";
+  document.getElementById("main").style.marginRight = "500px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+ 
+}
+function open8Nav() {
+  closeallNav()
+  document.getElementById("mySidenav8").style.width = "500px";
+  document.getElementById("main").style.marginRight = "500px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+ 
+}
+function open9Nav() {
+  closeallNav()
+  document.getElementById("mySidenav9").style.width = "500px";
+  document.getElementById("main").style.marginRight = "500px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+ 
+}
+
+
+  Marker1.addListener("click", () => {
     map.setZoom(7);
-    map.setCenter(beachMarker.getPosition());
+    map.setCenter(Marker1.getPosition());
     
     openNav()
     });
     
 
-Marker.addListener("click", () => {
+Marker2.addListener("click", () => {
   
   map.setZoom(7);
-  map.setCenter(Marker.getPosition());
+  map.setCenter(Marker2.getPosition());
   open2Nav()
   
   });
   
+
+Marker4.addListener("click", () => {
+  
+  map.setZoom(7);
+  map.setCenter(Marker4.getPosition());
+  open4Nav()
+  
+  });
+
+Marker5.addListener("click", () => {
+  
+  map.setZoom(7);
+  map.setCenter(Marker5.getPosition());
+  open5Nav()
+  
+  });
+
+Marker6.addListener("click", () => {
+  
+  map.setZoom(7);
+  map.setCenter(Marker6.getPosition());
+  open6Nav()
+  
+  });
+
+Marker7.addListener("click", () => {
+  
+  map.setZoom(7);
+  map.setCenter(Marker7.getPosition());
+  open7Nav()
+  
+  });
+
+Marker8.addListener("click", () => {
+  
+  map.setZoom(7);
+  map.setCenter(Marker8.getPosition());
+  open8Nav()
+  
+  });
+
+Marker9.addListener("click", () => {
+  
+  map.setZoom(7);
+  map.setCenter(Marker9.getPosition());
+  open9Nav()
+  
+  });
+
+
+
+
   currentMarker.addListener("click", () => {
     map.setZoom(7);
     map.setCenter(currentMarker.getPosition());
