@@ -70,47 +70,30 @@ h3 {
   display: inline-block;
   cursor: pointer;
 }
-
-.bar1, .bar2, .bar3 {
-  width: 35px;
-  height: 5px;
-  background-color: black;
-  margin: 6px 0;
-  transition: 0.4s;
-}
-
-.change .bar1 {
-  transform: translate(0, 11px) rotate(-45deg);
-}
-
-.change .bar2 {opacity: 0;}
-
-.change .bar3 {
-  transform: translate(0, -11px) rotate(45deg);
+popup {
+  color: #862633;
+  position: left;
+  text-align: left;
 }
 
     </style>
-        <div class="container" onclick="myFunction(this)">
-          <div class="bar1"></div>
-          <div class="bar2"></div>
-          <div class="bar3"></div>
-        </div>
+
     <h1>The Bear Arrvives in: </h1>
     <p id="demo"></p>
+  <h3>Click Below for the Daily Quiz about the Bear!</h3>
     <P>
 
     </P>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <!-- jsFiddle will insert css and js -->
-    <botton class="button button1">Bear Quiz</botton>
+    <botton class="button button1" onclick="">Bear Quiz</botton>
     
-    <src type="button1" onclick=""></src>
       <P></P>
-  <body>
+  <h3>Current Location of the Bear down below</h3>
 
     <!--The div element for the map -->
     <div id="map"></div>
-
+  </body>
 
     <!-- 
       The `defer` attribute causes the callback to execute after the full HTML
@@ -123,6 +106,7 @@ h3 {
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaj6QySYtOF3OzfCxa0h7j1Do9vNUY2yU&callback=initMap&v=weekly"
       defer
     ></script>
+
     <script>
       // Set the date we're counting down to
       var countDownDate = new Date("Apr,8 2023 12").getTime();
@@ -158,6 +142,14 @@ h3 {
   function myFunction(x) {
     x.classList.toggle("change");
   }
+
+
+  var latlngs = [
+[ 45.5152, -122.6784,]
+
+
+  ];
+  var polyline = L.polyline(latlngs, {color: 'red'}.addTo(map))
   </script>
   </body>
 
