@@ -1,10 +1,13 @@
 
+
 // Initialize and add the map
 function initMap() {
+
+
   // The location of Atlanta
   const Las = { lat: 36.1716, lng: -115.1391, };
   const Portland = { lat: 45.5152, lng: -122.6784, };
-  const Rocky = { lat: 44.2643, lng: -109.7870, };
+  const Rocky = { lat: 40.3428, lng: -105.6836, };
   const Dallas = { lat: 32.7767, lng: -96.7970, };
   const Atlanta = { lat: 33.7488, lng: -84.3877, };
   const Denver = { lat: 39.7392, lng: -104.9903, };
@@ -32,6 +35,7 @@ function initMap() {
     { lat: 45.8399, lng: -119.7006 },
     { lat: 45.6721, lng: -118.7886 },
     { lat: 45.3246, lng: -118.0877 },
+    
     { lat: 45.0285, lng: -117.9199 },
     { lat: 44.9115, lng: -117.9388 },
     { lat: 44.7749, lng:-117.8344 },
@@ -42,17 +46,24 @@ function initMap() {
     { lat: 43.133915, lng:-115.691917},
     {lat: 42.9457307, lng:-115.4661859 },
     {lat: 42.9360165, lng: -114.40587519999997},
-    { lat: 43.3077, lng:-113.9448 },
-    { lat:43.6366, lng:-113.3003},
-    { lat:43.4927, lng:-112.0408},
-    { lat: 44.4244, lng: -111.3711},
-    { lat: 44.2643, lng: -109.7870 },
-    {lat: 43.4799, lng:-110.7624},
-    {lat: 43.3011, lng:-110.7787},
-    {lat: 43.1611, lng:-111.0165},
-    {lat: 42.6205, lng:-110.9144},
-    {lat:42.0824, lng:-110.9552},
-    {lat:41.7370, lng: -111.8338},
+    
+    
+    
+    
+    
+  
+  // { lat: 43.3077, lng:-113.9448 },
+   // { lat:43.6366, lng:-113.3003},
+    //{ lat:43.4927, lng:-112.0408},
+   // { lat: 44.4244, lng: -111.3711},
+   // { lat: 44.2643, lng: -109.7870 },
+   // {lat: 43.4799, lng:-110.7624},
+   // {lat: 43.3011, lng:-110.7787},
+   // {lat: 43.1611, lng:-111.0165},
+   // {lat: 42.6205, lng:-110.9144},
+   //{ lat:42.0824, lng:-110.9552},
+
+   {lat:41.7370, lng: -111.8338},
     {lat: 41.5102, lng:-112.0155},
     {lat:40.9805, lng:-111.8874},
     { lat: 40.7608, lng: -111.8910 },
@@ -94,6 +105,7 @@ function initMap() {
     {lat:35.5942,lng:-105.2228},
     {lat:36.9034,lng:-104.4392},
     {lat:37.9453,lng:-104.8353},
+    { lat: 40.3428, lng: -105.6836,},
     //denver
     { lat: 39.7392, lng: -104.9903,},
     {lat:38.8403,lng:-97.6114},
@@ -125,7 +137,7 @@ function initMap() {
     {lat:32.8407,lng:-83.6324},
     //Atl
     { lat: 33.7488, lng: -84.3877, },
-
+  
     
 
 
@@ -144,7 +156,12 @@ function initMap() {
 
   // The marker, positioned at Atlanta
   const marker = new google.maps.Marker({
+
     position: Atlanta,
+    map: map,
+  });
+  const marker1 = new google.maps.Marker({
+    position: Rocky,
     map: map,
   });
   const marker2 = new google.maps.Marker({
@@ -155,10 +172,7 @@ function initMap() {
     position: Las ,
     map: map,
   });
-  const marker4 = new google.maps.Marker({
-    position: Rocky,
-    map: map,
-  });
+
   const marker5 = new google.maps.Marker({
     position: Dallas,
     map: map,
