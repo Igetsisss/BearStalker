@@ -97,9 +97,29 @@ oddddddooddddddddddddooooooooooooooooooooooooodddddddxxxxkkkkkxxxxkkOOOkxxdddxkO
 </head> 
 
 <!-- https://iili.io/HE1ORig.png-->
-<div id="naved">  <img src="https://iili.io/HEbyqhl.png" 
-  width="60" 
-  height="60" id="logo"/> <span id="countdown"> The Bear Arrives in:  </span>
+
+<div id="naved">
+  <nav id="slideout-menu" class="slideout-menu">
+   <a id="slideout-close" class="slideout-close" href="#">&times;</a>
+    <ul>
+        <li><a href="#" title="Our homepage">Games</a>  </li>
+        <li><a href="#" title="About CompanyX"></a></li>
+        <li><a href="https://barrel-taupe.vercel.app" title="About CompanyX">Barrel</a></li>
+        <li><a href="https://kahoot.com" title="Services we offer">Kahoot</a></li>
+        <li><a href="https://example.com" title="Get in touch!">Example</a></li>
+    </ul>
+</nav>
+
+<a id="slideout-toggle" class="slideout-toggle" href="#">
+    <span></span>
+    <span></span>
+    <span></span>
+</a>
+
+  <!-- <img src="https://iili.io/HEbyqhl.png" width="60" height="60" id="logo"/>--> 
+  
+  <span id="countdown" style="font-size: 50px;"> The Bear Arrives in:  </span>
+  
 
  
 
@@ -793,6 +813,28 @@ var x = setInterval(function() {
     document.getElementById("main").style.marginRight = "250px";
     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var menu, toggleButton, closeButton;
+
+    // Set Elements
+    menu = document.getElementById('slideout-menu');
+    toggleButton = document.getElementById('slideout-toggle');
+    closeButton = document.getElementById('slideout-close');
+
+    // Toggle Menu
+    toggleButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        menu.classList.toggle('is-open');
+    });
+
+    // Close Menu
+    closeButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        menu.classList.remove('is-open');
+    });
+});   
 </script>
 <!--
 //openNav()
