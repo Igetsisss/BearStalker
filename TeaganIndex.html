@@ -141,6 +141,45 @@ polyline{
 marker {
   position:fixed;
 }
+
+/* Callout box - fixed position at the bottom of the page */
+.callout {
+  position: fixed;
+  bottom: 35px;
+  right: 20px;
+  margin-left: 30px;
+  max-width: 300px;
+}
+
+/* Callout header */
+.callout-header {
+  padding: 20px 60px;
+  background: rgb(134, 38, 51);
+  font-size: 25px;
+  color: white;
+}
+
+/* Callout container/body */
+.callout-container {
+  padding: 15px;
+  background-color: rgb(99, 27, 37);
+  color: rgb(255 ,199 ,44);
+}
+
+/* Close button */
+.closebtn {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Change color on mouse-over */
+.closebtn:hover {
+  color:  rgb(255 ,199 ,44);
+}
 </style>
 
 </div>
@@ -165,7 +204,18 @@ marker {
     <div id="map">
     </div>
 
-
+    <div class="callout">
+      <div class="callout-header">How to use</div>
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      <div class="callout-container">
+        <p>-click the markers on the map to lean about each location
+        </p>
+        <p>-for info on the rest of the team, how we built this website, and a link to the HI portal click the 'Extra Info" tab at the top Left</p>
+      <p>
+        -the timer counting down at the top of the map is the time alloted until the bear arrives at HIES
+      </p>
+      </div>
+    </div>
    
 </body>
 
@@ -178,6 +228,7 @@ marker {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
+
 
 // create a red polyline from an array of LatLng points
 var latlngs = [
