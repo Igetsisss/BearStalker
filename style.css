@@ -104,7 +104,7 @@ height: 100%;
     z-index: 1;
     top: 0;
     right: 0;
-    background-color: rgb(112, 31, 44);
+    background-color: rgba(112, 31, 44);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -195,6 +195,15 @@ body {
   color: #ffffff;
   display: block;
   font-size: 1.4em;
+  padding: 8px 24px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+#slideout-menu5 {
+  color: #ffffff;
+  display: block;
+  font-size: 2em;
   padding: 8px 24px;
   text-decoration: none;
   z-index: 100;
