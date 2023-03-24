@@ -11,17 +11,23 @@ width: 100%;
 height: 100%;
 }
 
-#naved{
+.naved{
     background-color: rgb(112, 31, 44);
     font-family: 'Bebas Neue', cursive;
     color: white;
-    text-align: center;
-   
+    
+   text-align: center;
     height: 7vh;
-   
+   font-size: 5vh;
     
 }
 
+#icon{
+  left:0;
+  padding-left: 1%;
+  position: absolute;
+ 
+}
 
 #logo{
   background-color: transparent;
@@ -169,6 +175,10 @@ body {
   width: 280px;
   z-index: 100;
   
+  font-size: 1rem;
+  
+  
+  
 }
 
 .slideout-menu.is-open {
@@ -194,7 +204,7 @@ body {
 .slideout-menu ul li a {
   color: #ffffff;
   display: block;
-  font-size: 1.4em;
+  font-size: 2.4rem;
   padding: 8px 24px;
   text-decoration: none;
   z-index: 100;
@@ -227,7 +237,10 @@ body {
   width: 18px;
   z-index: 100;
   left:0;
-  top:0; 
+  margin: 2vh;
+  position: absolute;
+
+
   
 }
 
@@ -237,6 +250,27 @@ body {
   height: 2px;
   width: 100%;
   margin: 3px 0;
-  
+
   z-index: 100;
+}
+
+
+
+#street-view {
+  height: 50%;
+}
+
+
+
+
+
+
+
+.pano {
+  height: 50%;
+ 
+}
+.col {
+  height: 200px;
+  width: 620px;
 }
