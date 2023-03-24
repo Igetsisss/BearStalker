@@ -285,6 +285,29 @@ Marker9.addListener("click", () => {
     
 
 
+   
+      var panoramas = [];
+      panoDivs = document.getElementsByClassName('pano');
+      $(".pano").each(function(idx, el) {
+        console.log("idx=" + idx + " lat:" + parseFloat($(this).data("lat")) + " lng:" + parseFloat($(this).data("lng")) + " heading:" + parseFloat($(this).data("heading")));
+        var panorama = new google.maps.StreetViewPanorama(
+          el, {
+            position: {
+              lat: parseFloat($(this).data("lat")),
+              lng: parseFloat($(this).data("lng"))
+            },
+            pov: {
+              heading: parseFloat($(this).data("heading")),
+              pitch: 0
+            },
+            visible: true
+          });
+        panoramas.push(panorama);
+      })
+ 
+    
+   
+
 }
 
 google.maps.event.addDomListener(window, "load", initialize);
