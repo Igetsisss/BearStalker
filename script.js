@@ -34,7 +34,7 @@ function initialize() {
       //saltlake
       {location: new google.maps.LatLng(40.7608, -112.125198), stopover: false},
       //rockys
-      {location: new google.maps.LatLng(44.463132159838196,  -109.01770422743095), stopover: false},
+      {location: new google.maps.LatLng(40.32588865091826, -105.85341753896974), stopover: false},
       //denver
       {location: new google.maps.LatLng(39.74077241922982,  -104.97440875285031), stopover: false},
    
@@ -77,7 +77,7 @@ function initialize() {
   
   });
   var Marker5 = new google.maps.Marker({
-    position: { lat: 44.463132159838196, lng:-109.01770422743095 },
+    position: { lat: 40.32588865091826, lng:-105.85341753896974 },
     map,
     icon: image,
   
