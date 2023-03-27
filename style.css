@@ -13,9 +13,9 @@ height: 100%;
 
 .naved{
     background-color: rgb(112, 31, 44);
-    font-family: 'Bebas Neue', cursive;
+  
     color: white;
-    
+    font-family: 'Bebas Neue', cursive;
    text-align: center;
     height: 7vh;
    font-size: 5vh;
@@ -80,7 +80,7 @@ height: 100%;
   #sidenavhead {
     margin: -9% auto 0% 0%;
     padding-left: 3%;
-    
+    font-family: 'Quicksand', sans-serif;
     font-size: 22.5px;
     color: white;
   }
@@ -90,9 +90,11 @@ height: 100%;
   }
   #panelinfo{
     color: white;
+    font-family: 'Quicksand', sans-serif;
   }
   #jackcool{
     color: white;
+    font-family: 'Quicksand', sans-serif;
   }
   
   
@@ -113,6 +115,7 @@ height: 100%;
     background-color: rgba(112, 31, 44);
     overflow-x: hidden;
     transition: 0.5s;
+    
     padding-top: 60px;
 }
 
