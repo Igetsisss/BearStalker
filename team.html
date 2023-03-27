@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+
+
 <head>
     <div class="row">
         <div class="column">
@@ -19,11 +21,14 @@
           <div class="card">
             
             <div class="container">
+              
               <h2>Jack Underwood</h2>
-              <p class="title">Jack Underwood</p>
-              <p>Jack Underwood</p>
-              <p>jackunderwood@jackunderwood.org</p>
-              <p><button class="button"><a href="mailto:jackunderwood@jackunderwood.org?cc=jackunderwood@jackunderwood.org&bcc=jackunderwood@jackunderwood.org&subject=Jack%20Underwood&body=Jack%20%20Underwood" target="_top">Send mail!</a></button></p>
+              <p class="title"> Coder</p>
+              <p>Jack put lots of hard work into this project and always takes innitiative.</p>        
+              <p>underwoodja@bearsmail.org</p>
+              <p> <button class="button"> Contact</button></p>
+              
+              
             </div>
           </div>
         </div>
@@ -32,7 +37,7 @@
           <div class="card">
             <div class="container">
               <h2>Kenzo Sonoda </h2>
-              <p class="title">Design</p>
+              <p class="title">Coder</p>
               <p>Kenzo knows how to keep the peace between us all, he takes the time to get to know everyone and makes sure to treat you like a friend no matter what.</p>
               <p>sonodake@bearsmail.org</p>
               <p><button class="button">Contact</button></p>
@@ -226,4 +231,28 @@
 .button:hover {
     color: rgb(134, 38, 51);
 }
+
 </style>
+
+<script>
+
+function myFunction() {
+  // Get the text field
+  var copyText = document.getElementById("myInput");
+
+  // Select the text field
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); // For mobile devices
+
+   // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText.value);
+
+  // Alert the copied text
+  alert("Copied the text: " + copyText.value);
+}
+
+
+
+ 
+
+</script>
