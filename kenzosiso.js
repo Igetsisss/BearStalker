@@ -1,5 +1,3 @@
-
-
 // Initialize and add the map
 function initMap() {
 
@@ -51,17 +49,11 @@ function initMap() {
     
     
     
-  
-  // { lat: 43.3077, lng:-113.9448 },
-   // { lat:43.6366, lng:-113.3003},
-    //{ lat:43.4927, lng:-112.0408},
-   // { lat: 44.4244, lng: -111.3711},
-   // { lat: 44.2643, lng: -109.7870 },
-   // {lat: 43.4799, lng:-110.7624},
-   // {lat: 43.3011, lng:-110.7787},
-   // {lat: 43.1611, lng:-111.0165},
-   // {lat: 42.6205, lng:-110.9144},
-   //{ lat:42.0824, lng:-110.9552},
+//Coding to do's 
+//: Bear location
+//:Popups for loaction 
+//:upload to github
+//change urls to kahoots and fun facts. 
 
    {lat:41.7370, lng: -111.8338},
     {lat: 41.5102, lng:-112.0155},
@@ -222,4 +214,7 @@ function initMap() {
 
 
 window.initMap = initMap;
+
+
+
 
