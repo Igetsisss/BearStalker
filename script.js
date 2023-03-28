@@ -41,6 +41,9 @@ function initialize() {
       //dallas
      {location: new google.maps.LatLng(32.7767, -96.7970), stopover: false},
 
+       //new orlens 
+       {location: new google.maps.LatLng(29.957825344792173, -90.09442183026373), stopover: false},
+
       //nashvile
       {location: new google.maps.LatLng( 36.13063521329554, -86.79150842788147), stopover: false}],
     travelMode: google.maps.TravelMode.DRIVING
@@ -103,8 +106,16 @@ function initialize() {
     icon: image,
   
   });
-  var Marker9 = new google.maps.Marker({
-    position: { lat: 33.90787057154466, lng:-84.41525459289551 },
+
+  var Marker10 = new google.maps.Marker({
+    position: { lat: 29.957825344792173, lng:-90.09442183026373 },
+    map,
+    icon: image,
+  
+  });
+
+  var currentMarker = new google.maps.Marker({
+    position: { lat: 36.056595, lng: -112.125198 },
     map,
     icon: image,
   
@@ -113,9 +124,10 @@ function initialize() {
 
   var image2 =
     "https://iili.io/H1mtvtf.png";
-  var currentMarker = new google.maps.Marker({
-    position: { lat: 36.056595, lng: -112.125198 },
+  var Marker9 = new google.maps.Marker({
+    position: { lat: 33.90787057154466, lng: -84.41525459289551 },
     map,
+   
     icon: image2,
   
   });
@@ -138,6 +150,7 @@ function initialize() {
   document.getElementById("mySidenav7").style.width = "0";
   document.getElementById("mySidenav8").style.width = "0";
   document.getElementById("mySidenav9").style.width = "0";
+  document.getElementById("mySidenav10").style.width = "0";
   
     
   }
@@ -209,6 +222,14 @@ function open9Nav() {
  
 }
 
+function open10Nav() {
+  closeallNav()
+  document.getElementById("mySidenav10").style.width = "500px";
+  document.getElementById("main").style.marginRight = "500px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+ 
+}
+
 
   Marker1.addListener("click", () => {
     map.setZoom(7);
@@ -275,7 +296,13 @@ Marker9.addListener("click", () => {
   
   });
 
-
+  Marker10.addListener("click", () => {
+  
+    map.setZoom(7);
+    map.setCenter(Marker10.getPosition());
+    open10Nav()
+    
+    });
 
 
   currentMarker.addListener("click", () => {
