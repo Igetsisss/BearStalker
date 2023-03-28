@@ -71,10 +71,10 @@ function initialize() {
     position: { lat: 34.052235, lng: -118.243683 },
     map,
     icon: image,
-  
+    
   });
   var Marker4 = new google.maps.Marker({
-    position: { lat: 40.7608, lng: -112.125198 },
+    position: { lat: 40.770412815224844, lng: -111.89109521450753 },
     map,
     icon: image,
   
