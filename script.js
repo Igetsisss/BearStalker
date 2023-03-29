@@ -20,8 +20,8 @@ function initialize() {
 
   // Create the request object for the DirectionsService
   var request = {
-    // oregon
-    origin: new google.maps.LatLng(45.501240, -122.806091), // 1
+    // oregon, 
+    origin: new google.maps.LatLng(45.30279098426493, -121.7698224918919), // 1
     
     //atlanta
     destination: new google.maps.LatLng(33.90787057154466, -84.41525459289551),
@@ -57,7 +57,10 @@ function initialize() {
       // Add the Polyline to the map
       polyline.setMap(map);
     }
+    
   });
+
+//polyline.setOptions({strokeColor: '#FFFFFF'});
   //https://iili.io/H1mtvtf.png
  var image =
     "https://iili.io/HEDM13l.png";
@@ -131,8 +134,14 @@ function initialize() {
     icon: image2,
   
   });
-  
-  
+
+  var Marker11 = new google.maps.Marker({
+    position: { lat:  45.37359353794444, lng:-121.6959507693793 },
+    map,
+    icon: image,
+
+  });
+
   map.addListener("center_changed", () => {
     // 3 seconds after the center of the map has changed, pan back to the
     // marker.
@@ -151,6 +160,7 @@ function initialize() {
   document.getElementById("mySidenav8").style.width = "0";
   document.getElementById("mySidenav9").style.width = "0";
   document.getElementById("mySidenav10").style.width = "0";
+  document.getElementById("mySidenav11").style.width = "0";
   
     
   }
@@ -229,7 +239,13 @@ function open10Nav() {
   document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
  
 }
-
+function open11Nav() {
+  closeallNav()
+  document.getElementById("mySidenav11").style.width = "500px";
+  document.getElementById("main").style.marginRight = "500px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+ 
+}
 
   Marker1.addListener("click", () => {
     map.setZoom(7);
@@ -303,6 +319,15 @@ Marker9.addListener("click", () => {
     open10Nav()
     
     });
+
+    Marker11.addListener("click", () => {
+  
+      map.setZoom(7);
+      map.setCenter(Marker11.getPosition());
+      open11Nav()
+      
+      });
+  
 
 
   currentMarker.addListener("click", () => {
