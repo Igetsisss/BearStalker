@@ -62,71 +62,93 @@ function initialize() {
 
 //polyline.setOptions({strokeColor: '#FFFFFF'});
   //https://iili.io/H1mtvtf.png
- var image =
-    "https://iili.io/HEDM13l.png";
+ 
+    const image = {
+      url: "https://iili.io/HNZ36LN.png",
+      // This marker is 20 pixels wide by 32 pixels high.
+      size: new google.maps.Size(26, 40),
+      scaledSize: new google.maps.Size(26, 40),
+   
+    };
+    const image2 = {
+      url: "https://iili.io/HNZK6lt.png",
+      // This marker is 20 pixels wide by 32 pixels high.
+     
+      scaledSize: new google.maps.Size(34, 20),
+   
+    };
   var Marker1 = new google.maps.Marker({
     position: { lat: 36.083370, lng: -115.1729976 },
     map,
     icon: image,
+     scaledSize: new google.maps.Size(60, 60),
+     size: new google.maps.Size(71, 71),
   
   });
   var Marker2 = new google.maps.Marker({
     position: { lat: 34.052235, lng: -118.243683 },
     map,
     icon: image,
-    
+    scaledSize: new google.maps.Size(60, 60),
+    size: new google.maps.Size(71, 71),
   });
   var Marker4 = new google.maps.Marker({
     position: { lat: 40.770412815224844, lng: -111.89109521450753 },
     map,
     icon: image,
-  
+    scaledSize: new google.maps.Size(60, 60),
+    size: new google.maps.Size(71, 71),
   });
   var Marker5 = new google.maps.Marker({
     position: { lat: 40.32588865091826, lng:-105.85341753896974 },
     map,
     icon: image,
-  
+    scaledSize: new google.maps.Size(60, 60),
+    size: new google.maps.Size(71, 71),
   });
   
   var Marker6 = new google.maps.Marker({
     position: { lat: 39.74077241922982, lng:-104.97440875285031 },
     map,
     icon: image,
-  
+    scaledSize: new google.maps.Size(60, 60),
+    size: new google.maps.Size(71, 71),
   });
 
   var Marker7 = new google.maps.Marker({
     position: { lat: 32.7767, lng:-96.7970 },
     map,
     icon: image,
-  
+    scaledSize: new google.maps.Size(60, 60),
+    size: new google.maps.Size(71, 71),
   });
 
   var Marker8 = new google.maps.Marker({
     position: { lat: 36.13063521329554, lng:-86.79150842788147 },
     map,
     icon: image,
-  
+    scaledSize: new google.maps.Size(60, 60),
+    size: new google.maps.Size(71, 71),
   });
 
   var Marker10 = new google.maps.Marker({
     position: { lat: 29.957825344792173, lng:-90.09442183026373 },
     map,
     icon: image,
-  
+ 
+    
   });
 
   var currentMarker = new google.maps.Marker({
     position: { lat: 36.056595, lng: -112.125198 },
     map,
     icon: image,
-  
+    scaledSize: new google.maps.Size(60, 60),
+    size: new google.maps.Size(71, 71),
   });
 
 
-  var image2 =
-    "https://iili.io/H1mtvtf.png";
+
   var Marker9 = new google.maps.Marker({
     position: { lat: 33.90787057154466, lng: -84.41525459289551 },
     map,
