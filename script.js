@@ -1,15 +1,18 @@
+iszoomcontroltrue = true
+
 function initialize() {
   var map = new google.maps.Map(
     document.getElementById("map"), {
       zoom: 5,
       minZoom: 5,
-      zoomControl: true,
+      zoomControl: iszoomcontroltrue,
       mapTypeControl: true,
       scaleControl: true,
       streetViewControl: false,
       rotateControl: true,
       fullscreenControl: false,
       gestureHandling: "greedy",
+
       center: new google.maps.LatLng(39.8097343, -98.5556199),
       mapTypeId: google.maps.MapTypeId.HYBRID
       
@@ -188,12 +191,16 @@ function initialize() {
   }
    function openNav() {
     
+    document.getElementById("whatdoescalloutmean").style.display = "none";
+    
    closeallNav()
+   
     document.getElementById("mySidenav").style.width = "500px";
     document.getElementById("main").style.marginRight = "500px";
     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
 function open2Nav() {
+  document.getElementById("whatdoescalloutmean").style.display = "none";
   closeallNav()
   document.getElementById("mySidenav2").style.width = "500px";
   document.getElementById("main").style.marginRight = "500px";
@@ -202,6 +209,7 @@ function open2Nav() {
 //openNav()
 
 function open3Nav() {
+  document.getElementById("whatdoescalloutmean").style.display = "none";
   closeallNav()
   document.getElementById("mySidenav3").style.width = "500px";
   document.getElementById("main").style.marginRight = "500px";
@@ -211,6 +219,7 @@ function open3Nav() {
 //openNav()
 
 function open4Nav() {
+  document.getElementById("whatdoescalloutmean").style.display = "none";
   closeallNav()
   document.getElementById("mySidenav4").style.width = "500px";
   document.getElementById("main").style.marginRight = "500px";
@@ -219,6 +228,7 @@ function open4Nav() {
 }
 
 function open5Nav() {
+  document.getElementById("whatdoescalloutmean").style.display = "none";
   closeallNav()
   document.getElementById("mySidenav5").style.width = "500px";
   document.getElementById("main").style.marginRight = "500px";
@@ -226,6 +236,7 @@ function open5Nav() {
   
 }
 function open6Nav() {
+  document.getElementById("whatdoescalloutmean").style.display = "none";
   closeallNav()
   document.getElementById("mySidenav6").style.width = "500px";
   document.getElementById("main").style.marginRight = "500px";
@@ -233,6 +244,7 @@ function open6Nav() {
  
 }
 function open7Nav() {
+  document.getElementById("whatdoescalloutmean").style.display = "none";
   closeallNav()
   document.getElementById("mySidenav7").style.width = "500px";
   document.getElementById("main").style.marginRight = "500px";
@@ -240,6 +252,7 @@ function open7Nav() {
  
 }
 function open8Nav() {
+  document.getElementById("whatdoescalloutmean").style.display = "none";
   closeallNav()
   document.getElementById("mySidenav8").style.width = "500px";
   document.getElementById("main").style.marginRight = "500px";
@@ -247,6 +260,7 @@ function open8Nav() {
  
 }
 function open9Nav() {
+  document.getElementById("whatdoescalloutmean").style.display = "none";
   closeallNav()
   document.getElementById("mySidenav9").style.width = "500px";
   document.getElementById("main").style.marginRight = "500px";
@@ -255,6 +269,7 @@ function open9Nav() {
 }
 
 function open10Nav() {
+  document.getElementById("whatdoescalloutmean").style.display = "none";
   closeallNav()
   document.getElementById("mySidenav10").style.width = "500px";
   document.getElementById("main").style.marginRight = "500px";
@@ -262,6 +277,7 @@ function open10Nav() {
  
 }
 function open11Nav() {
+  document.getElementById("whatdoescalloutmean").style.display = "none";
   closeallNav()
   document.getElementById("mySidenav11").style.width = "500px";
   document.getElementById("main").style.marginRight = "500px";
@@ -343,7 +359,7 @@ Marker9.addListener("click", () => {
     });
 
     Marker11.addListener("click", () => {
-  
+   
       map.setZoom(7);
       map.setCenter(Marker11.getPosition());
       open11Nav()
