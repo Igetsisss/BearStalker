@@ -1,9 +1,11 @@
 html,
 body,
+
 #map {
   height: 93vh;
   width: 100%;
   margin: 0px;
+  
   padding: 0px;
 }
 #container { 
@@ -273,7 +275,75 @@ body {
   height: 50%;
  
 }
+
 .col {
   height: 200px;
   width: 620px;
 }
+
+
+
+  /* Callout header */
+  .callout-header {
+    padding: 20px 60px;
+    background: rgb(134, 38, 51);
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+    
+  }
+  
+  /* Callout container/body */
+  .callout-container {
+    padding: 15px;
+    background-color: rgb(99, 27, 37);
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+   color: white;
+  }
+  
+  /* Close button */
+  .closebtn {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    color: white;
+    font-size: 30px;
+    
+    cursor: pointer;
+    
+  }
+  
+  /* Change color on mouse-over */
+  .closebtn:hover {
+   /* color:  rgb(255 ,199 ,44);*/
+   color: white;
+   
+  }
+  .callout {
+    position: fixed;
+    z-index: 2000;
+    bottom: 35px;
+    right: 20px;
+    margin-left: 30px;
+    font-family: 'Quicksand', sans-serif;
+    max-width: 300px;
+    color: white;
+  }
+  
+  .callout.close {
+    -webkit-animation: callout-close 0.5s ease-in-out forwards;
+    animation: callout-close 0.5s ease-in-out forwards;
+  }
+  
+  @keyframes callout-close {
+    0% {
+      right: 20px;
+    }
+    100% {
+      right: -100%;
+    }
+  }
