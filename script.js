@@ -1,3 +1,4 @@
+// Jack Underwood
 iszoomcontroltrue = true
 
 function initialize() {
