@@ -63,7 +63,7 @@ function initialize() {
     
   });
 
-//polyline.setOptions({strokeColor: '#FFFFFF'});
+polyline.setOptions({strokeColor: '#FFC72C'});
   //https://iili.io/H1mtvtf.png
  
     const image = {
