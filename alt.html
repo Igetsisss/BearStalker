@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<head>
+  <title>Bear Tracker Beta</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" sizes="48x48" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaj6QySYtOF3OzfCxa0h7j1Do9vNUY2yU"></script>
+<link rel="stylesheet" type="text/css" href="style2.css" />
+<script src="script2.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head> 
+<div id="naved"></div>
+<!-- <div id="nav"></div>-->
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <h1 id="sidenavhead">
+  Current Location: Las Vegas, Nevada
+
+  </h1>
+  <hr>
+  <h2>
+    
+  </h2>
+  <img src="https://d1v9pyzt136u2g.cloudfront.net/blog/wp-content/uploads/2022/03/31034235/shutterstock_1499600606_copy.jpg"
+  width="500px" 
+  height="300px" id="panelimg">
+  <ul>
+  <h1 id="jackcool"> Info</h1>
+  <hr>
+  <h2 id="panelinfo">
+    
+   
+
+ <li> Elevation - Approximately 2,030 ft (620 m) above sea level.​</li>
+  
+  <br>
+  <br>
+<li>Population - 646,790​</li>
+  <br>
+  <br>
+<li> Known for - Gambling, shopping, fine dining, entertainment, and nightlife​</li>
+  <br>
+  <br>
+<li>Sports teams - Vegas Golden Knights​</li>
+  <br>
+  <br>
+<li> Mayor - Carolyn Goodman​</li>
+  <br>
+  <br>
+<li> Famous landmark - The Volcano</li>
+  <br>
+  </h2>
+</ul>
+</div>
+
+
+<div id="map"></div>
+
+<script>
+
+var countDownDate = new Date("Feb 25, 2023 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("naved").innerHTML = "The Bear Arrives in: " + days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("nav").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+ <script>
+ 
+ function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginRight = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+//openNav()
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginRight= "0";
+    document.body.style.backgroundColor = "white";
+}
+ </script>
+ <script>
+  function zommout() {
+    map.setZoom(8);
+    map.setCenter(beachMarker.getPosition());
+  }
+ 
+ </script>

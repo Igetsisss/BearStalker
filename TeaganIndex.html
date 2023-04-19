@@ -1,0 +1,656 @@
+
+
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.min.js"></script>
+
+
+<head>
+
+  
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>
+
+   
+
+
+</head>
+<style>
+
+
+
+    .timer{
+  background-color: rgb(134, 38, 51);
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 35px;
+  border-radius: 0%;
+  z-index: 100;
+  font-variant-position: normal;
+  margin: 0px;
+  padding: 0px;
+  color: white;
+}
+
+
+
+
+
+/* The sidepanel menu */
+.sidepanel {
+  height: 250px; /* Specify a height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 10; /* Stay on top */
+  top: 5;
+  right: 100;
+  background-color: rgb(99, 27, 37); /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+  
+}
+
+/* The sidepanel links */
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: rgb(255 ,199 ,44);
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidepanel a:hover {
+  color: rgb(134, 38, 51);
+}
+
+/* Position and style the close button (top right corner) */
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style the button that is used to open the sidepanel */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color:  rgb(134, 38, 51);
+  color: rgb(255, 255, 255);
+  padding: 10px 15px;
+  border: none;
+  top: 10px;
+  z-index: 2;
+}
+
+.openbtn:hover {
+  background-color: rgb(99, 27, 37);
+}
+
+#map{
+    
+    
+    z-index: 0;
+    height: 96vh;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+
+}
+
+
+
+
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+h1 {
+font-size: 15px;
+
+}
+
+b {
+
+  font-size: 10px;
+  
+}
+polyline{
+  position:relative;
+}
+marker {
+  position:fixed;
+}
+
+/* Callout box - fixed position at the bottom of the page */
+.callout {
+  position: fixed;
+  bottom: 35px;
+  right: 20px;
+  margin-left: 30px;
+  max-width: 300px;
+}
+
+/* Callout header */
+.callout-header {
+  padding: 20px 60px;
+  background: rgb(134, 38, 51);
+  font-size: 25px;
+  color: white;
+}
+
+/* Callout container/body */
+.callout-container {
+  padding: 15px;
+  background-color: rgb(99, 27, 37);
+  color: rgb(255 ,199 ,44);
+}
+
+/* Close button */
+.closebtn {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Change color on mouse-over */
+.closebtn:hover {
+  color:  rgb(255 ,199 ,44);
+}
+</style>
+
+</div>
+
+
+<body>
+  <div id="mySidepanel" class="sidepanel">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+   
+    <a href="https://map.jackunderwood.org/team.html">Meet the team</a>
+    <a href="https://hies.org">HIES homepage</a>
+    <a href="https://hies.myschoolapp.com/app">MyHIES</a>
+    <a href="https://iili.io/HN47iZJ.png">Daily Bear Fun Fact</a>
+    <a href="https://kahoot.it/challenge/8d929c1f-d507-40b2-9d76-cc83f52641aa_1679592255616 ">Quiz</a>
+    <a href="https://kahoot.it/challenge/09995349?challenge-id=61fa6832-473a-466f-9699-97745d9adbf8_1680022690178">Advanced Quiz</a>
+  </div>
+  
+  <button class="openbtn" onclick="openNav()">&#9776; Extra Info</button>
+
+  <div id="overlay"></div>
+  <div class="timer">
+    <p id="demo"></p>
+   </div>
+
+    <div id="map">
+    </div>
+
+    <div class="callout">
+      <div class="callout-header">How to use</div>
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      <div class="callout-container">
+        <p>-Click the markers on the map to learn about each location
+        </p>
+        <p>-For info on the rest of the team, how we built this website, a link to the HI portal, and daily quizes click the 'Extra Info" tab at the top Left</p>
+      <p>
+        -The timer counting down at the top of the map is the time alloted until the bear arrives at HIES
+      </p>
+      
+      </div>
+    </div>
+   
+</body>
+
+<script>
+  
+  //so we can see the map/ what makes it interactive
+    var map = L.map('map').setView([40, -99], 4);
+
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+
+// create a red polyline from an array of LatLng points
+var latlngs = [
+    //REALLINE
+    [43.5, -120.8],
+    //MIDLINE
+    [43, -120.],
+    //THRULINE
+    [42.5, -120.],
+    //THRULINE
+    [42.3, -120.4],
+    //MIDLINE
+    [42, -120.5],
+    //THRULINE
+    [41, -120.2],
+   //THRULINE
+    [40.9, -120.3],
+    //MIDLINE
+    [40., -122],
+    //MIDLINE
+    [39.4, -122],
+    //MIDLINE
+    [37.77, -122.43],
+    //THRULINE
+    [37, -121.],
+    //THRULINE
+    [36., -121],
+    //THRULINE
+    [35.5, -121.],
+
+    //MIDLINE
+    [35, -120],
+    //REALLINE
+    [34.3, -119],
+    //MIDLINE
+    [34.6, -117.9],
+    //MIDLINE
+    [35, -117],
+    //MIDLINE
+    [36, -116.5],
+    //REALLINE
+    [36.6, -116],
+    //THRULINE
+     //MIDLINE
+     [35.3, -116.],
+     //MIDLINE
+     [35., -115.],
+    //REALLINE 
+    [33.8, -113],
+    
+    //REALLINE 
+    [35.2, -112.3],
+    //MIDLINE
+    [40, -112],
+    //REALLINE
+    [42.6, -109.7],
+    //THRULINE
+    [41, -109],
+    //MIDLINE
+    [39, -109],
+    //THRULINE
+    [38, -108],
+    //MIDLINE
+    [37, -105],
+    //REALLINE
+    [38.9, -104.],
+    
+    //MIDLINE
+    [37, -101],
+    //THRUINE
+    [34, -100],
+    //REALLINE
+    [32.5, -98],
+    //THRULINE
+    [31, -97],
+    //MIDLINE
+    [30, -96],
+    //REALLINE
+    [31, -92.],
+    //MIDLINE
+    [32, -89],
+    //THRULINE
+    [31.4, -85],
+    //REALLINE
+    [29, -82.5],
+    //MIDLINE
+    [33, -82],
+    //REALLINE
+    [33.5, -84.3]
+];
+
+var polyline = L.polyline(latlngs, {color: 'rgb(99, 27, 37)'}).addTo(map);
+
+// zoom the map to the polyline
+
+
+//markers (theres gonna be alot lol be prepared)
+var greenIcon = L.icon({
+  iconUrl: 'https://iili.io/HEDM131.png',
+    
+
+    iconSize:     [25, 40], // size of the icon
+    shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 50], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-9, -47] // point from which the popup should open relative to the iconAnchor
+});
+
+//marker for bear den
+var marker = L.marker([43, -120], {icon: greenIcon}).addTo(map);
+
+marker.bindPopup("<div> <h1>Bear Den<h1> <b>This is where the bear is being made, and where it will be shipped out from. <b> </div>");
+
+    function onMapClick(e) {
+            var popup = e.target.getPopup();
+
+
+            $.ajax({
+                url: "https://hies.myschoolapp.com/ftpimages/219/download/download_8262433.png",
+                })
+                .done(function( data ) {
+                    alert( data );
+                    popup.setContent( data );
+                    popup.update();
+                    })
+                .fail(function( data ) {
+                    alert( 'FAIL: ' + data );
+
+                    });
+            };
+
+    marker.on('click', onMapClick );
+
+    marker.on('click', onMapClick );
+
+
+
+//Las Vegas, Nevada 
+
+
+
+var marker = L.marker([35.7, -115.3], {icon: greenIcon}).addTo(map);
+  marker.bindPopup("<h1>Las Vegas<h1> <b>Elevation - Approximately 2,030 ft (620 m) above sea level. Population - 646,790 Known for - Gambling, shopping, fine dining, entertainment, and nightlife. Sports teams - Vegas Golden Knights. Mayor - Carolyn Goodman. </b>");
+
+    function onMapClick(e) {
+            var popup = e.target.getPopup();
+
+
+            $.ajax({
+                url: "https://hies.myschoolapp.com/ftpimages/219/download/download_8262433.png",
+                })
+                .done(function( data ) {
+                    alert( data );
+                    popup.setContent( data );
+                    popup.update();
+                    })
+                .fail(function( data ) {
+                    alert( 'FAIL: ' + data );
+
+                    });
+            };
+
+    marker.on('click', onMapClick );
+
+    
+//Houston, Texas
+
+var marker = L.marker([31.7, -97], {icon: greenIcon}).addTo(map);
+    marker.bindPopup("<h1> Dallas </h1> <b> - Elevation: 420′ Feet  - Population: 1.288 million (2021)- Number of bears: The number of bears in Texas is rare but there is a population of black Bears living in the Big Bend National Park. National Park Services estimates 30-40 black bears are living there.  - Known for?: Dallas today is a cosmopolitan city known for its high concentration of restaurants and bears. Skyscrapers, such as Bank of America Plaza (1985) and Reunion Tower (1978), create a striking night skyline.- Dallas is the ninth most populous city in the country. Initially, the city of Dallas, Texas developed thanks to the construction of major railroad lines that allowed access to cotton, cattle, and later oil.  - Sports Team: Dallas Cowboys, Dallas Mavericks, Dallas Stars, Dallas Jackals, Dallas Wings, and FC Dallas.- Mayor: Eric Johnson- Landmarks:   </b> ");
+
+    function onMapClick(e) {
+            var popup = e.target.getPopup();
+
+
+            $.ajax({
+                iconUrl: "https://iili.io/Hlml3AX.png",
+                })
+                .done(function( data ) {
+                    alert( data );
+                    popup.setContent( data );
+                    popup.update();
+                    })
+                .fail(function( data ) {
+                    alert( 'FAIL: ' + data );
+
+                    });
+            };
+
+    marker.on('click', onMapClick );
+
+    //grand canyon 
+    
+    var marker = L.marker([34.9, -112], {icon: greenIcon}).addTo(map);
+    marker.bindPopup("<h1>Grand Canyon</h1> <b>Elevation- 6,804-, Yealy visitors- 5.9 million,How was it created- Techtonics uplifts and erosion, Where is it- northwest Arizona,When did it become a national park- February 26, 1919 </b>");
+
+    function onMapClick(e) {
+            var popup = e.target.getPopup();
+
+
+            $.ajax({
+                iconUrl: "https://iili.io/Hlml3AX.png",
+                })
+                .done(function( data ) {
+                    alert( data );
+                    popup.setContent( data );
+                    popup.update();
+                    })
+                .fail(function( data ) {
+                    alert( 'FAIL: ' + data );
+
+                    });
+            };
+
+//HIES 
+
+var marker = L.marker([32.5, -83.5], {icon: greenIcon}).addTo(map);
+    marker.bindPopup("<h1> Holy Innocents</h1> <b>Elevation:  738′- Population: 6,000,000- The number of bears: 5,100 statewide- Known for?:  Atlanta is known as a major business city. It is the home of Coca-Cola Company, CNN, AT&T, and Home Depot, as well as many other Fortune 500 companies. Atlanta's airport, called Hartsfield-Jackson International Airport, is the busiest airport in the world.- ​Sports teams: Atlanta Braves, Atlanta Falcons, Atlanta Hawkes, Atlanta United, Georgia Swarm.- Mayor: Andre Dickens- Famous Landmarks: World of Coca-Cola, Piedmont Park, Zoo Atlanta, High museum of Art, Mercedes Benz Stadium, Stone Mountain                                                                                                                                                                                    ​ </b> ");
+
+    function onMapClick(e) {
+            var popup = e.target.getPopup();
+
+
+            $.ajax({
+                iconUrl: "https://iili.io/Hlml3AX.png",
+                })
+                .done(function( data ) {
+                    alert( data );
+                    popup.setContent( data );
+                    popup.update();
+                    })
+                .fail(function( data ) {
+                    alert( 'FAIL: ' + data );
+
+                    });
+            };
+//Dinsey World
+
+ var marker = L.marker([28, -81.7], {icon: greenIcon}).addTo(map);
+    marker.bindPopup("<h1> Disney World</h1> <b>Elevation - 102 ft / 31 m,Yearly visitors – About 12 million people.,How was it created - Walt Disney wanted to build another park in Florida, based on Disneyland. ,When did it become a park - October 1, 1971 </b> ");
+
+    function onMapClick(e) {
+            var popup = e.target.getPopup();
+
+
+            $.ajax({
+                iconUrl: "https://iili.io/Hlml3AX.png",
+                })
+                .done(function( data ) {
+                    alert( data );
+                    popup.setContent( data );
+                    popup.update();
+                    })
+                .fail(function( data ) {
+                    alert( 'FAIL: ' + data );
+
+                    });
+            };
+
+//rocky mountian national park
+
+var marker = L.marker([42, -109], {icon: greenIcon}).addTo(map);
+    marker.bindPopup("<h1>Rocky Mountain National Park</h1> <b> Mount Elbert is the Rocky Mountains' tallest peak. It is 14,439 feet above sea level. It has existed for around 1.7 billion years. The Rocky mountains are still growing today. The Rocky mountains is one of the nation's highest national parks. The Rocky Mountain's Bear population is 20-30. The Rocky Mountains stretch from Canada to New Mexico. The Rocky Mountains became a national park in 1915.  The Rocky Mountains formed about 285 million years ago. There are 4.5 million visitors who visit the Rocky Mountains each year. ​-The park was established in 1915 when President Woodrow Wilson signed the Rocky Mountain National Park Act.​-Denver welcomed 31.7 total visitors in 2021-Elevation - elevations from 7,860 feet to 14,259 feet- </b>");
+
+    function onMapClick(e) {
+            var popup = e.target.getPopup();
+
+
+            $.ajax({
+                iconUrl: "https://iili.io/Hlml3AX.png",
+                })
+                .done(function( data ) {
+                    alert( data );
+                    popup.setContent( data );
+                    popup.update();
+                    })
+                .fail(function( data ) {
+                    alert( 'FAIL: ' + data );
+
+                    });
+            };
+    marker.on('click', onMapClick );
+//New Orleans 
+
+var marker = L.marker([29.5, -91], {icon: greenIcon}).addTo(map);
+    marker.bindPopup("<h1> New Orleans </h1> <b> Elevation: 6.562′- Population: 376,971 (2021)- How many bears live there: about 700 black bearsin New orleans and the surrounding area- Known for?: distinctive music, Creole cuisine, unique dialects, and its annual celebrations and festivals, most notably Mardi Gras.- Sports teams: New Orleans Pelicans(Basketball), New Orleans Saints(Football), - Mayor: LaToya Cantrell- Famous Landmarks: Audobon Zoo, National WWII Museum, Museum of Art, City Park, Audobon Aquarium</b> " );
+
+    function onMapClick(e) {
+            var popup = e.target.getPopup();
+
+
+            $.ajax({
+                iconUrl: "https://iili.io/Hlml3AX.png",
+                })
+                .done(function( data ) {
+                    alert( data );
+                    popup.setContent( data );
+                    popup.update();
+                    })
+                .fail(function( data ) {
+                    alert( 'FAIL: ' + data );
+
+                    });
+            };
+            marker.on('click', onMapClick );
+
+//Devnver 
+var marker = L.marker([38.4, -103], {icon: greenIcon} ).addTo(map);
+    marker.bindPopup("<h1>Denver</h1> <b>Denver the capital of Colorado -  Denver is situated at a high altitude of 5,280 feet above sea level- 2,931,000- In Colorado between 17,000-20,000 bears live in the state with an estimated amount of 3,614 bear reports in the last yea- - Denver is famous for its collection of world-class museums, historical landmarks, and natural beauty being home to the Rocky mountains- s - Denver Broncos football, Denver Nuggets basketball, Colorado Rockies baseball and Colorado Avalanche hockey- - Michael B Hancock has been mayor since 2011- – With over 431.7 million visitors every year.</b>");
+
+    function onMapClick(e) {
+            var popup = e.target.getPopup();
+
+
+            $.ajax({
+                iconUrl: "https://iili.io/Hlml3AX.png",
+                })
+                .done(function( data ) {
+                    alert( data );
+                    popup.setContent( data );
+                    popup.update();
+                    })
+                .fail(function( data ) {
+                    alert( 'FAIL: ' + data );
+
+                    });
+            };
+
+    marker.on('click', onMapClick );
+//Pheonix
+    var marker = L.marker([33, -112], {icon: greenIcon}).addTo(map);
+    marker.bindPopup("<H1>Pheonix</h1> <b>The elevation is 1,086 feet.-The population is around 1.625 million.-there are 13 bears in phoenix Arizona.-Over 19 million people visit phoenix Arizona each year.-Kate Gallego is the mayor-People may know it for its year-round sun, desert beauty, and world-class resorts and golf, but as the fifth-largest city in the U.S., it also offers sophisticated urbanscapes, southwest culture and lots of outdoor adventure.- Sports teams: Phoenix Suns,  Phoenix Mercury, Arizona Diamond Backs, Arizona Coyotes, Arizona Caridnals </b>  ");
+
+    function onMapClick(e) {
+            var popup = e.target.getPopup();
+
+
+            $.ajax({
+                iconUrl: "https://iili.io/Hlml3AX.png",
+                })
+                .done(function( data ) {
+                    alert( data );
+                    popup.setContent( data );
+                    popup.update();
+                    })
+                .fail(function( data ) {
+                    alert( 'FAIL: ' + data );
+
+                    });
+            };
+
+    marker.on('click', onMapClick );
+//Los Angeles
+var marker = L.marker([33.7, -118.2], {icon: greenIcon}).addTo(map);
+    marker.bindPopup("<H1>Los Angeles</h1> <b>Elevation- 305- Population- 3.849-How many bears live here- About 150 to 500 black bears- Known for- Tv and movie industries- Sports teams- Los Angeles Lakers, LA rams, LA Chargers, LA Clippers, LA Dodgers- Mayor- Karen Bass</b>  ");
+
+    function onMapClick(e) {
+            var popup = e.target.getPopup();
+
+
+            $.ajax({
+                iconUrl: "https://iili.io/Hlml3AX.png",
+                })
+                .done(function( data ) {
+                    alert( data );
+                    popup.setContent( data );
+                    popup.update();
+                    })
+                .fail(function( data ) {
+                    alert( 'FAIL: ' + data );
+
+                    });
+            };
+
+    marker.on('click', onMapClick );
+
+
+
+//timer 
+// Set the date we're counting down to
+var countDownDate = new Date("Apr 23, 2023").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = " The bear is in the den";
+  }
+}, 1000);
+
+//Java script for the side panel 
+
+/* Set the width of the sidebar to 250px (show it) */
+function openNav() {
+  document.getElementById("mySidepanel").style.width = "250px";
+}
+
+/* Set the width of the sidebar to 0 (hide it) */
+function closeNav() {
+  document.getElementById("mySidepanel").style.width = "0";
+}
+</script>
+
+
