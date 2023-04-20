@@ -36,6 +36,8 @@ Kenzo Sonoda
 
 Phillip Coleman
 
+Dean Mellon
+
 Jones Gartland
 
 Bobby Skrynecki
@@ -51,5 +53,5 @@ Avelina Delpiano
 Sam Chasteen
 
 Ms. Parks
-Dean Mellon
+
 
