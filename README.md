@@ -24,3 +24,32 @@ The Bear Tracker project is an inspiration to other students who are interested 
 
 [HTML and CSS](https://github.com/Igetsisss/BearStalker/blob/main/kenzobenzo.html)
 [JS](https://github.com/Igetsisss/BearStalker/blob/main/stuffthatdoesnotreallymatter/kenzosiso.js)
+
+
+## Credits
+
+Jack Underwood
+
+Teagan Johnson
+
+Kenzo Sonoda
+
+Phillip Coleman
+
+Jones Gartland
+
+Bobby Skrynecki
+
+Graham Goddard
+
+Chase Warbington
+
+Brent Warbington
+
+Avelina Delpiano
+
+Sam Chasteen
+
+Ms. Parks
+Dean Mellon
+
