@@ -18,7 +18,11 @@ body,
     font-family: 'Bebas Neue', cursive;
     text-align: center;
     height: 7vh;
-    font-size: 5vh;
+    line-height: 7vh;
+   
+    
+    font-size: min(5vw, 7vh);
+  
 }
 
 #icon {
@@ -34,6 +38,12 @@ body,
     right: 0;
     top: 0;
     padding-right: 1%;
+    height: 7vh;
+    
+   width: auto;
+ 
+  
+  
 }
 
 #sidenavhead {
@@ -128,7 +138,7 @@ body {
     left: -280px;
     transition: left .4s;
     top: 0;
-
+   
     height: 93vh;
     width: 280px;
     z-index: 68;
@@ -206,13 +216,15 @@ body {
 }
 
 .slideout-toggle {
-    display: inline-block;
-    padding: 10px;
+
+   
     width: 18px;
     z-index: 68;
     left: 0;
-    margin: 2vh;
     position: absolute;
+    transform: translateY(-50%);
+    top:3.5vh;
+    padding-left: 1%
 }
 
 .slideout-toggle span {
@@ -248,20 +260,36 @@ body {
     border-top-right-radius: 20px;
     z-index: 68;
     border-top-left-radius: 20px;
-}
-
-/* Callout container/body */
-.callout-container {
+    /* Responsiveness */
+    @media (max-width: 768px) {
+      padding: 10px 30px;
+      font-size: 25px;
+    }
+    @media (max-width: 576px) {
+      padding: 5px 15px;
+      font-size: 20px;
+    }
+  }
+  
+  /* Callout container/body */
+  .callout-container {
     padding: 15px;
     background-color: rgb(99, 27, 37);
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
     z-index: 68;
     color: white;
-}
-
-/* Close button */
-.closebtn {
+    /* Responsiveness */
+    @media (max-width: 768px) {
+      padding: 10px 20px;
+    }
+    @media (max-width: 576px) {
+      padding: 5px 10px;
+    }
+  }
+  
+  /* Close button */
+  .closebtn {
     position: absolute;
     top: 5px;
     right: 15px;
@@ -269,16 +297,23 @@ body {
     font-size: 30px;
     z-index: 68;
     cursor: pointer;
-}
-
-/* Change color on mouse-over */
-.closebtn:hover {
+    /* Responsiveness */
+    @media (max-width: 768px) {
+      font-size: 25px;
+    }
+    @media (max-width: 576px) {
+      font-size: 20px;
+    }
+  }
+  
+  /* Change color on mouse-over */
+  .closebtn:hover {
     /* color:  rgb(255 ,199 ,44);*/
     z-index: 68;
     color: white;
-}
-
-.callout {
+  }
+  
+  .callout {
     position: fixed;
     z-index: 2000;
     bottom: 35px;
@@ -288,7 +323,18 @@ body {
     max-width: 300px;
     z-index: 68;
     color: white;
-}
+    /* Responsiveness */
+    @media (max-width: 768px) {
+      max-width: 200px;
+      right: 10px;
+      margin-left: 0;
+    }
+    @media (max-width: 576px) {
+      max-width: 100px;
+      right: 5px;
+      margin-left: 0;
+    }
+  }
 
 .callout.close {
     -webkit-animation: callout-close 0.5s ease-in-out forwards;
@@ -359,3 +405,10 @@ body {
     z-index: 69;
     opacity: 1;
 }
+
+
+#slideout-toggle, #countdown, #logo {
+    display: inline-block;
+    margin: 0 10px;
+  }
+
