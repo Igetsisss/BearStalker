@@ -8,7 +8,7 @@ The Bear Tracker project is an inspiration to other students who are interested 
 
 
 
-## Authors
+## Coders
 
 - [@Igetsisss](https://github.com/Igetsisss) Jack Underwood - Website is https://map.jackunderwood.org
 
