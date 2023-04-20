@@ -406,9 +406,3 @@ body {
     opacity: 1;
 }
 
-
-#slideout-toggle, #countdown, #logo {
-    display: inline-block;
-    margin: 0 10px;
-  }
-
