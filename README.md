@@ -20,7 +20,7 @@ The Bear Tracker project is an inspiration to other students who are interested 
 
 [HTML, JS and CSS](https://github.com/Igetsisss/BearStalker/blob/main/TeaganIndex.html)
 
-- [@GAMER2023-svg](https://github.com/GAMER2023-svg) Kenzo Sedona - Website is https://map.jackunderwood.org/kenzobenzo
+- [@GAMER2023-svg](https://github.com/GAMER2023-svg) Kenzo Sonoda - Website is https://map.jackunderwood.org/kenzobenzo
 
 [HTML and CSS](https://github.com/Igetsisss/BearStalker/blob/main/kenzobenzo.html)
 [JS](https://github.com/Igetsisss/BearStalker/blob/main/stuffthatdoesnotreallymatter/kenzosiso.js)
