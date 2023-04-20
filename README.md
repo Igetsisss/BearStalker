@@ -16,7 +16,11 @@ The Bear Tracker project is an inspiration to other students who are interested 
 [JS](https://github.com/Igetsisss/BearStalker/blob/main/script.js)
 [CSS](https://github.com/Igetsisss/BearStalker/blob/main/style.css)
 
-
 - [@TeagenJ](https://github.com/TeaganJ) Teagan Johnson - Website is https://map.jackunderwood.org/TeaganIndex
 
+[HTML, JS and CSS](https://github.com/Igetsisss/BearStalker/blob/main/TeaganIndex.html)
+
 - [@GAMER2023-svg](https://github.com/GAMER2023-svg) Kenzo Sedona - Website is https://map.jackunderwood.org/kenzobenzo
+
+[HTML and CSS](https://github.com/Igetsisss/BearStalker/blob/main/kenzobenzo.html)
+[JS](https://github.com/Igetsisss/BearStalker/blob/main/stuffthatdoesnotreallymatter/kenzosiso.js)
