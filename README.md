@@ -11,7 +11,10 @@ The Bear Tracker project is an inspiration to other students who are interested 
 ## Authors
 
 - [@Igetsisss](https://github.com/Igetsisss) Jack Underwood - Website is https://map.jackunderwood.org
+
 [HTML](https://github.com/Igetsisss/BearStalker/blob/main/index.html)
+[JS](https://github.com/Igetsisss/BearStalker/blob/main/script.js)
+[CSS](https://github.com/Igetsisss/BearStalker/blob/main/style.css)
 
 
 - [@TeagenJ](https://github.com/TeaganJ) Teagan Johnson - Website is https://map.jackunderwood.org/TeaganIndex
