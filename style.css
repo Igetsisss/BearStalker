@@ -18,7 +18,7 @@ body,
     font-family: 'Bebas Neue', cursive;
     text-align: center;
     height: 7vh;
-    line-height: 7vh;
+   
    
     
     font-size: min(5vw, 7vh);
@@ -31,7 +31,7 @@ body,
   position: absolute;
   line-height: 0;
   display: inline-block;
-  height: 4.8vh;
+ 
   width: auto;
 
 }
@@ -43,9 +43,9 @@ body,
     right: 0;
     top: 0;
     padding-right: 1%;
-    height: 7vh;
     
-   width: auto;
+    
+
  
   
   
@@ -167,6 +167,7 @@ body {
     margin: 0;
     padding: 0;
     z-index: 68;
+    line-height: auto;
 }
 
 .slideout-menu ul li a {
@@ -175,6 +176,8 @@ body {
     font-size: 2.4rem;
     padding: 8px 24px;
     text-decoration: none;
+    
+   
     z-index: 68;
 }
 
@@ -411,3 +414,7 @@ body {
     opacity: 1;
 }
 
+
+#countdown{
+    line-height: 7vh;
+}
