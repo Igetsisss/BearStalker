@@ -15,16 +15,22 @@ function initialize() {
             center: new google.maps.LatLng(39.8097343, -98.5556199),
             mapTypeId: google.maps.MapTypeId.HYBRID
         });
-    var directionsService = new google.maps.DirectionsService();
+   /*  var directionsService = new google.maps.DirectionsService();
     var polyline = new google.maps.Polyline();
     // Create the request object for the DirectionsService
     var request = {
         // oregon, 
         origin: new google.maps.LatLng(45.30279098426493, -121.7698224918919), // 1
         //atlanta
-        destination: new google.maps.LatLng(33.90787057154466, -84.41525459289551),
+        //destination: new google.maps.LatLng(33.90787057154466, -84.41525459289551),
+
+//current location
+
+destination: new google.maps.LatLng(33.90787057154466, -84.41525459289551),
+ */
+
         //Los Angeles
-        waypoints: [{
+       /*  waypoints: [{
                 location: new google.maps.LatLng(34.052235, -118.243683),
                 stopover: false
             },
@@ -68,8 +74,8 @@ function initialize() {
                 location: new google.maps.LatLng(36.13063521329554, -86.79150842788147),
                 stopover: false
             }
-        ],
-        travelMode: google.maps.TravelMode.DRIVING
+        ], */
+/*         travelMode: google.maps.TravelMode.DRIVING
     };
     // Make the request to the DirectionsService
     directionsService.route(request, function(result, status) {
@@ -82,26 +88,26 @@ function initialize() {
     });
     polyline.setOptions({
         strokeColor: '#FFC72C'
-    });
+    }); */
     //https://iili.io/H1mtvtf.png
-    const image = {
+    const past = {
         url: "https://iili.io/HNZ36LN.png",
         // This marker is 20 pixels wide by 32 pixels high.
         size: new google.maps.Size(26, 40),
         scaledSize: new google.maps.Size(26, 40),
     };
-    const image2 = {
+    const current = {
         url: "https://iili.io/HNZK6lt.png",
         // This marker is 20 pixels wide by 32 pixels high.
         scaledSize: new google.maps.Size(34, 20),
     };
-    var Marker1 = new google.maps.Marker({
+  /*   var Marker1 = new google.maps.Marker({
         position: {
             lat: 36.083370,
             lng: -115.1729976
         },
         map,
-        icon: image,
+        icon: past,
         scaledSize: new google.maps.Size(60, 60),
         size: new google.maps.Size(71, 71),
     });
@@ -111,7 +117,7 @@ function initialize() {
             lng: -118.243683
         },
         map,
-        icon: image,
+        icon: past,
         scaledSize: new google.maps.Size(60, 60),
         size: new google.maps.Size(71, 71),
     });
@@ -121,7 +127,7 @@ function initialize() {
             lng: -111.89109521450753
         },
         map,
-        icon: image,
+        icon: past,
         scaledSize: new google.maps.Size(60, 60),
         size: new google.maps.Size(71, 71),
     });
@@ -131,7 +137,7 @@ function initialize() {
             lng: -105.85341753896974
         },
         map,
-        icon: image,
+        icon: past,
         scaledSize: new google.maps.Size(60, 60),
         size: new google.maps.Size(71, 71),
     });
@@ -141,7 +147,7 @@ function initialize() {
             lng: -104.97440875285031
         },
         map,
-        icon: image,
+        icon: past,
         scaledSize: new google.maps.Size(60, 60),
         size: new google.maps.Size(71, 71),
     });
@@ -151,7 +157,7 @@ function initialize() {
             lng: -96.7970
         },
         map,
-        icon: image,
+        icon: past,
         scaledSize: new google.maps.Size(60, 60),
         size: new google.maps.Size(71, 71),
     });
@@ -161,7 +167,7 @@ function initialize() {
             lng: -86.79150842788147
         },
         map,
-        icon: image,
+        icon: past,
         scaledSize: new google.maps.Size(60, 60),
         size: new google.maps.Size(71, 71),
     });
@@ -171,17 +177,7 @@ function initialize() {
             lng: -90.09442183026373
         },
         map,
-        icon: image,
-    });
-    var currentMarker = new google.maps.Marker({
-        position: {
-            lat: 36.056595,
-            lng: -112.125198
-        },
-        map,
-        icon: image,
-        scaledSize: new google.maps.Size(60, 60),
-        size: new google.maps.Size(71, 71),
+        icon: past,
     });
     var Marker9 = new google.maps.Marker({
         position: {
@@ -189,15 +185,25 @@ function initialize() {
             lng: -84.41525459289551
         },
         map,
-        icon: image2,
+        icon: past,
+        scaledSize: new google.maps.Size(60, 60),
+        size: new google.maps.Size(71, 71),
     });
+    var currentMarker = new google.maps.Marker({
+        position: {
+            lat: 36.056595,
+            lng: -112.125198
+        },
+        map,
+        icon: past,
+    }); */
     var Marker11 = new google.maps.Marker({
         position: {
             lat: 45.37359353794444,
             lng: -121.6959507693793
         },
         map,
-        icon: image,
+        icon: current,
     });
     map.addListener("center_changed", () => {
         // 3 seconds after the center of the map has changed, pan back to the
@@ -220,7 +226,7 @@ function initialize() {
         document.getElementById("mySidenav10").style.width = "0";
         document.getElementById("mySidenav11").style.width = "0";
     }
-
+/* 
     function openNav() {
         document.getElementById("whatdoescalloutmean").style.display = "none";
         closeallNav()
@@ -300,14 +306,15 @@ function initialize() {
         document.getElementById("main").style.marginRight = "500px";
         document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
     }
-
+ */
     function open11Nav() {
         document.getElementById("whatdoescalloutmean").style.display = "none";
         closeallNav()
         document.getElementById("mySidenav11").style.width = "500px";
         document.getElementById("main").style.marginRight = "500px";
         document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-    }
+   }
+   /*  
     Marker1.addListener("click", () => {
         map.setZoom(7);
         map.setCenter(Marker1.getPosition());
@@ -352,17 +359,26 @@ function initialize() {
         map.setZoom(7);
         map.setCenter(Marker10.getPosition());
         open10Nav()
-    });
+    }); */
     Marker11.addListener("click", () => {
         map.setZoom(7);
         map.setCenter(Marker11.getPosition());
         open11Nav()
     });
+    
+    
+    
+    
+    
     currentMarker.addListener("click", () => {
         map.setZoom(7);
         map.setCenter(currentMarker.getPosition());
         open3Nav()
     });
+
+
+
+    
     var panoramas = [];
     panoDivs = document.getElementsByClassName('pano');
     $(".pano").each(function(idx, el) {
