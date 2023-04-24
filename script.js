@@ -1,3 +1,6 @@
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+alert("Bear Tracker was designed for desktop, for the best experience please use a desktop")
+  }
 iszoomcontroltrue = true
 
 function initialize() {
