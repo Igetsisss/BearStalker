@@ -39,13 +39,13 @@ MMMMMMMMMMMMMMMMMMMMMMMMW0l;,',,,,'',,,'',;::::::ccccc::;;;;;;;;;;;;::::ldxkO0Ok
 MMMMMMMMMMMMMMMMMMMMMMMMMW0xoclol::::::;;;:::cccccccc:::;;;;,,,;;:;;::::cldxkO0Okolllccccc:::::::::cllccol;,;;;;,'''''',;::::clooodddxOXWMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMWN0kkdc;;:cc:::::::ccc::c:::::;;,,,,,;;;,',;;;;:codxkOkxolllcccc::cc:::cclolcloc,,;;,,,,,,,,;ccccc:ccllldxxOXWMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMWX0kdc:;,'.,;;;,,:::cc::::::::;;,,,,,,,,'...';;;;::cccoxkdlcccccccccccccllllccoo:'''....'',;cddc;:c:cloddxkkOKWMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMN0xoc;'...     .;::c:::c::::;,,,,,,,,,,,,,,,,,,,,,'..,coolccccllcccllloooolcloc,''......',,;::,,;:cccllodxOXWMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMWXK0kxl:,..      .;::::::cc::;,,,,,,,,,,,,,,,,,,,,,,,,,;cloolllloollllodddddoodo:,''...'''',,,,''',;::clooxOXWMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMWXOdccc:;'...     .;:::::cc::;;;;;;;;;;;;,,,,,,,,,;::cllodddddollllloddxxkkkkxxxl:,,'..',''',,;,;;,,,;:cloxk0NMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMWXxc::;,'...     .;:::::cc:;;;,,'''''''''''',,:cloxxxkkkxxxdol:clodxxkOOOOOOkxdc;,'..',''',,;;;;cllloddxkO0XWMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMNk:,'....       .:::::cc:::;;,'..  .........',;:lddxOOOOkxdoc::lxkOOOOOOOOOkdoc;,,'',;'.''.',;cldxk0XNNNNWWMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMWOc,'......... .,:::::c::::;;;,'..  .............',;coxOOkxddolldkOOOOOOOOOkdl:;;;;;;''',..';ldkkOKNMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMWXOdolc:;,'... .;cc:::::::::;;;;,'...  ..............';cdxkxdddldkOOOOOO00Oko;;cccc:,',,,',cdkOKXNWMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMN0xoc;'...     .;::c:::c::::;,,,,,,,,,,,,,,,,,,,,,'..,coolccccllcccllloooolcloc,''......',,;::,,;:cccllodxOXWMMJMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMWXK0kxl:,..      .;::::::cc::;,,,,,,,,,,,,,,,,,,,,,,,,,;cloolllloollllodddddoodo:,''...'''',,,,''',;::clooxOXWMMMAMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMWXOdccc:;'...     .;:::::cc::;;;;;;;;;;;;,,,,,,,,,;::cllodddddollllloddxxkkkkxxxl:,,'..',''',,;,;;,,,;:cloxk0NMMMMCMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMWXxc::;,'...     .;:::::cc:;;;,,'''''''''''',,:cloxxxkkkxxxdol:clodxxkOOOOOOkxdc;,'..',''',,;;;;cllloddxkO0XWMMMMKMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMNk:,'....       .:::::cc:::;;,'..  .........',;:lddxOOOOkxdoc::lxkOOOOOOOOOkdoc;,,'',;'.''.',;cldxk0XNNNNWWMMMMMMIMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMWOc,'......... .,:::::c::::;;;,'..  .............',;coxOOkxddolldkOOOOOOOOOkdl:;;;;;;''',..';ldkkOKNMMMMMMMMMMMMMSMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMWXOdolc:;,'... .;cc:::::::::;;;;,'...  ..............';cdxkxdddldkOOOOOO00Oko;;cccc:,',,,',cdkOKXNWMMMMMMMMMMMMMMTMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMWNKOkdl;'.....':cc::::::::::;;;;,''................ ....';::clldkOOOOO000Od;.',;;'..',,;cdO0KXNWMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMWNKOko;'......;:ccc::::::::::;;;;,''''.........'''',;::;,,,,;:ldkOOOOOOOOd;....'...',;:okKXNNWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMWXXx,........;cccccc::::::::::;;;;,'''',:ccclodxxxkOOOOxl;;;:lxkOOOOOOOx;. ...'..':ldk0XWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
@@ -76,6 +76,32 @@ ooooooooooooooooooooooooooooooooooooodddddddddxxxxkkkOkkkkxddoooooddxkOOOO000000
 dddddddddddddddddoooooooooooooooooooooodddddddxxxxkkkkxxkkkOkkxdddxkOOO0000000000KKKXXNNWNNWWNNNXNNNWNNNNNNNNNNNNNNNNWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-->
 
 <head>
+ <script>
+        // Get the current date object
+        var today = new Date();
+    
+        // Get the current day of the month (1-31)
+        var day = today.getDate();
+    
+        // Create a script element
+        var script = document.createElement("script");
+    
+        // Set the source attribute to the corresponding script file
+        script.src = "days/day" + day + ".js";
+    console.log(day)
+        // Append the script element to the head of the document
+        document.head.appendChild(script);
+        
+      </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JDX6S3PVTD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JDX6S3PVTD');
+</script>
     <title>Bear Tracker - E Block
         Computer Science</title>
     <link rel="apple-touch-icon"
@@ -100,7 +126,7 @@ dddddddddddddddddoooooooooooooooooooooodddddddxxxxkkkkxxkkkOkkxdddxkOOO000000000
     <link rel="stylesheet"
         type="text/css"
         href="style.css" />
-    <script src="script.js"></script>
+<script src="script.js"></script>
     <link rel="preconnect"
         href="https://fonts.googleapis.com">
     <link rel="preconnect"
@@ -120,7 +146,7 @@ dddddddddddddddddoooooooooooooooooooooodddddddxxxxkkkkxxkkkOkkxdddxkOOO000000000
 </head>
 <!-- https://iili.io/HE1ORig.png--> <a
     href="#" class="JesterBox">
-    <div id="image1"><img
+    <div id="image1"><img id="dailyfunfact"
             src="https://iili.io/HN47LCv.png">
     </div>
 </a>
@@ -147,14 +173,14 @@ dddddddddddddddddoooooooooooooooooooooodddddddxxxxkkkkxxkkkOkkxdddxkOOO000000000
                         height="40"
                         id="icon" />Daily
                     Fun Fact</a></li>
-            <li><a href="https://kahoot.it/challenge/8d929c1f-d507-40b2-9d76-cc83f52641aa_1679592255616"
+            <li><a id="easyquiz"href="https://kahoot.it/challenge/8d929c1f-d507-40b2-9d76-cc83f52641aa_1679592255616"
                     title=""><img
                         src="https://iili.io/HNusmg4.png"
                         width="40"
                         height="40"
                         id="icon" />Quiz</a>
             </li>
-            <li><a href="https://kahoot.it/challenge/963c3ee4-5e5c-4781-bf7f-3a7ff8a4798f_1680022910957"
+            <li><a id="hardquiz" href="https://kahoot.it/challenge/963c3ee4-5e5c-4781-bf7f-3a7ff8a4798f_1680022910957"
                     title=""><img
                         src="https://iili.io/HNuLJm7.png"
                         width="40"
@@ -202,7 +228,7 @@ dddddddddddddddddoooooooooooooooooooooodddddddxxxxkkkkxxkkkOkkxdddxkOOO000000000
         href="javascript:void(0)"
         class="closebtn"
         onclick="closeallNav()">×</a>
-    <h1 id="sidenavhead"> Past Location:
+    <h1 id="sidenavhead26"> Past Location:
         Las Vegas, Nevada </h1>
     <hr>
     <h2> </h2> <img
@@ -213,29 +239,19 @@ dddddddddddddddddoooooooooooooooooooooodddddddxxxxkkkkxxkkkOkkxdddxkOOO000000000
         <h1 id="jackcool"> Info</h1>
         <hr>
         <h2 id="panelinfo">
-            <li>If in thousands:</li>
-            <li>Population - 646,790
-                (2021)​</li> <br> <br>
-            <li>If in millions:</li>
-            <li>Population - 7.23
-                million (2022)​</li>
-            <br> <br>
-            <li> Elevation - 2,030 ft​
-            </li> <br> <br>
-            <li> Known for - Gambling,
-                shopping, fine dining,
-                entertainment, and
-                nightlife​</li> <br>
-            <br>
-            <li>Sports teams - Vegas
-                Golden Knights​ and
-                Raiders​</li> <br> <br>
-            <li> Mayor - Carolyn
-                Goodman​</li> <br> <br>
-            <li>Famous Landmarks -
-                Welcome to Vegas sign,
-                The strip, Bellagio
-                Fountains​</li> <br>
+          
+<li>Landmarks: </li>
+<br>
+<br>
+<li>Know For: ​</li>
+<br>
+<br>
+<li>Sports Teams: ​</li>
+<br>
+<br>
+<li>Bear Population: </li>
+<br>
+<br>
         </h2>
     </ul> <br> <br> </h2>
     </ul>
@@ -251,7 +267,7 @@ dddddddddddddddddoooooooooooooooooooooodddddddxxxxkkkkxxkkkOkkxdddxkOOO000000000
         href="javascript:void(0)"
         class="closebtn"
         onclick="closeallNav()">×</a>
-    <h1 id="sidenavhead"> Past Location:
+    <h1 id="sidenavhead25"> Past Location:
         Los Angeles, California </h1>
     <hr>
     <h2> </h2> <img
@@ -261,30 +277,18 @@ dddddddddddddddddoooooooooooooooooooooodddddddxxxxkkkkxxkkkOkkxdddxkOOO000000000
     <ul>
         <h1 id="jackcool"> Info</h1>
         <hr>
-        <h2 id="panelinfo"> ​<li>
-                Population- 3.849
-                million​ </li> <br> <br>
-            <li> How many bears live
-                here- About 150 to 500
-                black bears​ </li> <br>
+        <h2 id="panelinfo"> <li>Landmarks: Walt Disney Concert Hall​ Griffth Observatory, The Getty, Universal Studio</li>
             <br>
-            <li> Known for- Tv and movie
-                industries​ </li> <br>
             <br>
-            <li> Sports teams- Los
-                Angeles Lakers, LA rams,
-                LA Chargers, LA
-                Clippers, LA Dodgers, LA
-                Angels, La Kings, LA
-                Galaxy​ </li>
-            <li> Mayor- Karen Bass​
-            </li> <br> <br>
-            <li> Landmarks- Walt Disney
-                Concert Hall​ </li> <br>
+            <li>Know For: Tv and movie industries​</li>
             <br>
-            <li> Griffth Observatory,
-                The Getty, Universal
-                Studio </li> <br> <br>
+            <br>
+            <li>Sports Teams: Los Angeles Lakers, LA rams, LA Chargers, LA Clippers, LA Dodgers, LA Angels, La Kings, LA Galaxy​</li>
+            <br>
+            <br>
+            <li>Bear Population: Walt Disney Concert Hall​ Griffth Observatory, The Getty, Universal Studio</li>
+            <br>
+            <br>
         </h2>
     </ul>
     <h1 id="jackcool">Street View</h1>
@@ -299,7 +303,7 @@ dddddddddddddddddoooooooooooooooooooooodddddddxxxxkkkkxxkkkOkkxdddxkOOO000000000
         href="javascript:void(0)"
         class="closebtn"
         onclick="closeallNav()">×</a>
-    <h1 id="sidenavhead"> Past Location:
+    <h1 id="sidenavhead27"> Past Location:
         Grand Canyon, Arizona </h1>
     <hr>
     <h2> </h2> <img
@@ -310,18 +314,18 @@ dddddddddddddddddoooooooooooooooooooooodddddddxxxxkkkkxxkkkOkkxdddxkOOO000000000
         <h1 id="jackcool"> Info</h1>
         <hr>
         <h2 id="panelinfo">
-            <li> Elevation- 6,804​ </li>
-            <br> <br>
-            <li> Yearly visitors- 5.9
-                million​ </li> <br> <br>
-            <li> How was it created-
-                Techtonics uplifts and
-                erosion​ </li> <br> <br>
-            <li> Where is it- northwest
-                Arizona​ </li> <br> <br>
-            <li> When did it become a
-                national park- February
-                26, 1919 </li> <br> <br>
+            <li>Landmarks: The Grand Canyon is the most visited landmark in Arizona, and the one that the bear visited.</li>
+            <br>
+            <br>
+            <li>Know For:  Being one of the best examples of land erosion in the world. The Grand Canyon averages 4,000 feet deep for its entire 277 miles. ​</li>
+            <br>
+            <br>
+            <li>Sports Teams: MLB’s Diamondbacks, NFL Cardinals, and NHL Coyotes.</li>
+            <br>
+            <br>
+            <li>Bear Population: 2,000 to 2,500 bears</li>
+            <br>
+            <br>
         </h2>
     </ul>
     <h1 id="jackcool">Street View</h1>
@@ -336,7 +340,7 @@ dddddddddddddddddoooooooooooooooooooooodddddddxxxxkkkkxxkkkOkkxdddxkOOO000000000
         href="javascript:void(0)"
         class="closebtn"
         onclick="closeallNav()">×</a>
-    <h1 id="sidenavhead"> Past Location:
+    <h1 id="sidenavhead28"> Past Location:
         Salt Lake City, Utah </h1>
     <hr>
     <h2> </h2> <img
@@ -347,23 +351,20 @@ dddddddddddddddddoooooooooooooooooooooodddddddxxxxkkkkxxkkkOkkxdddxkOOO000000000
         <h1 id="jackcool"> Info</h1>
         <hr>
         <h2 id="panelinfo">
-            <li> Elevation - 4,226 </li>
-            <br> <br>
-            <li> Population - 200,478
-            </li> <br> <br>
-            <li> 4,000 Black Bears Live
-                there </li> <br> <br>
-            <li> Sports Team(s) - Utah
-                Grizzlies (ECHL) Utah
-                Jazz (NBA) Real Salt
-                Lake (MLS) </li> <br>
-            <br>
-            <li> Mayor - Erin Mendenhall
-            </li> <br> <br>
-            <li> Landmarks - The rocky
-                mountains and temple
-                square </li> <br> <br>
-            <br> <br>
+            <li>Landmarks: Beehive House, Cathedral of Madeleine, Tracy Aviary & Botanical Gardens, and Vivint Arena. 
+
+            </li>
+<br>
+<br>
+<li>Know For: Rocky Mountains, Temple Square, Liberty Park, Salt Lake Tabernacle, and Hogle Zoo.​</li>
+<br>
+<br>
+<li>Sports Teams: Utah Grizzlies (ECHL), Utah Jazz (NBA), and Real Salt Lake (MLS)​</li>
+<br>
+<br>
+<li>Bear Population: 4,000 Black Bears Live there</li>
+<br>
+<br>
         </h2>
     </ul>
     <h1 id="jackcool">Street View</h1>
@@ -377,7 +378,7 @@ dddddddddddddddddoooooooooooooooooooooodddddddxxxxkkkkxxkkkOkkxdddxkOOO000000000
         href="javascript:void(0)"
         class="closebtn"
         onclick="closeallNav()">×</a>
-    <h1 id="sidenavhead"> Past Location:
+    <h1 id="sidenavhead1"> Past Location:
         Rocky Mountains​ </h1>
     <hr>
     <h2> </h2> <img
@@ -388,34 +389,18 @@ dddddddddddddddddoooooooooooooooooooooodddddddxxxxkkkkxxkkkOkkxdddxkOOO000000000
         <h1 id="jackcool"> Info</h1>
         <hr>
         <h2 id="panelinfo">
-            <li> Mount Elbert is the
-                Rocky Mountains' tallest
-                peak. It is 14,439 feet
-                above sea level. ​ </li>
-            <br> <br>
-            <li> It has existed for
-                around 1.7 billion
-                years. The Rocky
-                mountains are still
-                growing today. </li>
-            <br> <br>
-            <li> It is estimated there
-                are about 20-30 bears in
-                the park </li> <br> <br>
-            <li> The Rocky Mountains
-                stretch from Canada to
-                New Mexico. </li> <br>
+            <li>Landmarks: </li>
             <br>
-            <li> The Rocky Mountains
-                became a national park
-                in 1915. </li> <br> <br>
-            <li> Landmarks - The rocky
-                mountains and temple
-                square </li> <br> <br>
-            <li> There are 4.5 million
-                visitors who visit the
-                Rocky Mountains each
-                year. </li> <br> <br>
+            <br>
+            <li>Know For: ​</li>
+            <br>
+            <br>
+            <li>Sports Teams: ​</li>
+            <br>
+            <br>
+            <li>Bear Population: </li>
+            <br>
+            <br>
         </h2>
     </ul>
     <h1 id="jackcool">Street View</h1>
@@ -429,7 +414,7 @@ dddddddddddddddddoooooooooooooooooooooodddddddxxxxkkkkxxkkkOkkxdddxkOOO000000000
         href="javascript:void(0)"
         class="closebtn"
         onclick="closeallNav()">×</a>
-    <h1 id="sidenavhead"> Past Location:
+    <h1 id="sidenavhead2"> Past Location:
         Denver, Colorado </h1>
     <hr>
     <h2> </h2> <img
@@ -440,40 +425,17 @@ dddddddddddddddddoooooooooooooooooooooodddddddxxxxkkkkxxkkkOkkxdddxkOOO000000000
         <h1 id="jackcool"> Info</h1>
         <hr>
         <h2 id="panelinfo">
-            <li> Where is it located -
-                Denver the capital of
-                Colorado </li> <br> <br>
-            <li> Elevation - Denver is
-                one of the higest cities
-                at 5,983 feet. It is
-                known as the mile high
-                city </li> <br> <br>
-            <li> Population - 2,931,000
-            </li> <br> <br>
-            <li> How many bears live
-                statewide - In Colorado
-                between 17,000-20,000
-                bears live in the state
-            </li> <br> <br>
-            <li> Known for - Denver is
-                famous for its
-                collection of
-                world-class museums,
-                historical landmarks,
-                and natural beauty being
-                home to the Rocky
-                mountains </li> <br>
+            <li>Landmarks: Molly Brown House museum, Larimer Square, South Platte River</li>
             <br>
-            <li> Sport Teams - Denver
-                Broncos football, Denver
-                Nuggets basketball,
-                Colorado Rockies
-                baseball and Colorado
-                Avalanche hockey </li>
-            <br> <br>
-            <li> Mayor - Michael B
-                Hancock has been mayor
-                since 2011 ​ </li> <br>
+            <br>
+            <li>Know For: World-class museums, historical landmarks, and natural beauty​</li>
+            <br>
+            <br>
+            <li>Sports Teams: Broncos, Nuggets, Rockies, Colorodo Avalanche​</li>
+            <br>
+            <br>
+            <li>Bear Population: Higby is the first bear to be in this location</li>
+            <br>
             <br>
         </h2>
     </ul>
@@ -488,7 +450,7 @@ dddddddddddddddddoooooooooooooooooooooodddddddxxxxkkkkxxkkkOkkxdddxkOOO000000000
         href="javascript:void(0)"
         class="closebtn"
         onclick="closeallNav()">×</a>
-    <h1 id="sidenavhead"> Past Location:
+    <h1 id="sidenavhead3"> Past Location:
         Dallas, Texas </h1>
     <hr>
     <h2> </h2> <img
@@ -499,32 +461,18 @@ dddddddddddddddddoooooooooooooooooooooodddddddxxxxkkkkxxkkkOkkxdddxkOOO000000000
         <h1 id="jackcool"> Info</h1>
         <hr>
         <h2 id="panelinfo">
-            <li> Population: 1.288
-                million (2021) </li>
-            <br> <br>
-            <li> Number of bears: The
-                number of bears in Texas
-                are rare but there is a
-                population of black
-                Bears living in the Big
-                Bend National Park.
-                National Park Services
-                estimates 30-40 black
-                bears are living there.
-                ​ </li> <br> <br>
-            <li> Dallas is the ninth
-                most populous city in
-                the country. Initially,
-                the city of Dallas,
-                Texas developed thanks
-                to the construction of
-                major railroad lines
-                that allowed access to
-                cotton, cattle, and
-                later oil. ​ </li> <br>
+            <li>Landmarks: </li>
             <br>
-            <li> Mayor: Eric Johnson
-            </li> <br> <br>
+            <br>
+            <li>Know For: Barbeque, sports, oil production, and history.​</li>
+            <br>
+            <br>
+            <li>Sports Teams: Cowboys (NFL), Mavericks (NBA), Rangers (MLB), Stars (NHL), and Dallas FC (MLS)​</li>
+            <br>
+            <br>
+            <li>Bear Population: 30-40 Bears</li>
+            <br>
+            <br>
         </h2>
     </ul>
     <h1 id="jackcool">Street View</h1>
@@ -538,8 +486,8 @@ dddddddddddddddddoooooooooooooooooooooodddddddxxxxkkkkxxkkkOkkxdddxkOOO000000000
         href="javascript:void(0)"
         class="closebtn"
         onclick="closeallNav()">×</a>
-    <h1 id="sidenavhead"> Past Location:
-        Nashville </h1>
+    <h1 id="sidenavhead5"> Past Location:
+        Nashville, Tennessee</h1>
     <hr>
     <h2> </h2> <img
         src="https://www.visittheusa.com/sites/default/files/styles/hero_l/public/images/hero_media_image/2016-10/HERO%201_Nashville_TN_shutterstock_208620637_Web72DPI.jpg?h=c11c9c1d&itok=0CEBXY50"
@@ -549,23 +497,18 @@ dddddddddddddddddoooooooooooooooooooooodddddddxxxxkkkkxxkkkOkkxdddxkOOO000000000
         <h1 id="jackcool"> Info</h1>
         <hr>
         <h2 id="panelinfo">
-            <li> Population- 692,587​
-            </li> <br> <br>
-            <li> How many bears live in
-                Tennessee- 6,000​ </li>
-            <br> <br>
-            <li> Known for- Country
-                music </li> <br> <br>
-            <li> Sports team- Tennessee
-                Titans, Nashville
-                Predators </li> <br>
+            <li>Landmarks: </li>
             <br>
-            <li> Mayor- John Cooper
-            </li> <br> <br>
-            <li> Landmarks- Country
-                Music Hall of Fame, and
-                Ryman Auditorium </li>
-            <br> <br> <br> <br>
+            <br>
+            <li>Know For: ​</li>
+            <br>
+            <br>
+            <li>Sports Teams: ​</li>
+            <br>
+            <br>
+            <li>Bear Population: </li>
+            <br>
+            <br>
         </h2>
     </ul>
     <h1 id="jackcool">Street View</h1>
@@ -579,7 +522,7 @@ dddddddddddddddddoooooooooooooooooooooodddddddxxxxkkkkxxkkkOkkxdddxkOOO000000000
         href="javascript:void(0)"
         class="closebtn"
         onclick="closeallNav()">×</a>
-    <h1 id="sidenavhead"> Current
+    <h1 id="sidenavhead8"> Past
         Location: Atlanta </h1>
     <hr>
     <h2> </h2> <img
@@ -590,37 +533,18 @@ dddddddddddddddddoooooooooooooooooooooodddddddxxxxkkkkxxkkkOkkxdddxkOOO000000000
         <h1 id="jackcool"> Info</h1>
         <hr>
         <h2 id="panelinfo">
-            <li> ​Population: 6,140,000
-            </li> <br> <br>
-            <li> The number of bears:
-                5,100 statewide </li>
-            <br> <br>
-            <li> Known for?: Atlanta is
-                known as a major
-                business city. It is the
-                home of Coca-Cola
-                Company, CNN, AT&T, and
-                Home Depot. Atlanta's
-                airport, called
-                Hartsfield-Jackson
-                International Airport,
-                is the busiest airport
-                in the world. </li> <br>
+            <li>Landmarks: </li>
             <br>
-            <li> Sports teams: Atlanta
-                Braves, Atlanta Falcons,
-                Atlanta Hawks, and
-                Atlanta United FC </li>
-            <br> <br>
-            <li> Mayor: Andre Dickens
-            </li> <br> <br>
-            <li> Famous Landmarks: World
-                of Coca-Cola, Piedmont
-                Park, Zoo Atlanta,
-                Mercedes Benz Stadium,
-                Georgia Aquairiam, and
-                Stone Mountain </li>
-            <br> <br> <br> <br>
+            <br>
+            <li>Know For: ​</li>
+            <br>
+            <br>
+            <li>Sports Teams: ​</li>
+            <br>
+            <br>
+            <li>Bear Population: </li>
+            <br>
+            <br>
         </h2>
     </ul>
     <h1 id="jackcool">Street View</h1>
@@ -635,7 +559,7 @@ dddddddddddddddddoooooooooooooooooooooodddddddxxxxkkkkxxkkkOkkxdddxkOOO000000000
     <a href="javascript:void(0)"
         class="closebtn"
         onclick="closeallNav()">×</a>
-    <h1 id="sidenavhead"> Past Location:
+    <h1 id="sidenavhead4"> Past Location:
         New Orleans, Louisiana​ </h1>
     <hr>
     <h2> </h2> <img
@@ -646,31 +570,18 @@ dddddddddddddddddoooooooooooooooooooooodddddddxxxxkkkkxxkkkOkkxdddxkOOO000000000
         <h1 id="jackcool"> Info</h1>
         <hr>
         <h2 id="panelinfo">
-            <li> ​Population: 376,971
-                (2021)​ </li> <br> <br>
-            <li> How many bears live
-                there statewide: 700
-            </li> <br> <br>
-            <li> Known for?: distinctive
-                music, Creole cuisine,
-                unique dialects, and its
-                annual celebrations and
-                festivals, most notably
-                Mardi Gras.​ </li> <br>
+            <li>Landmarks: </li>
             <br>
-            <li> Sports teams: New
-                Orleans
-                Pelicans(Basketball),
-                Saints(Football) </li>
-            <br> <br>
-            <li> Mayor: LaToya Cantrell​
-            </li> <br> <br>
-            <li> Famous Landmarks:
-                Audobon Zoo, National
-                WWII Museum, Museum of
-                Art, City Park, Audobon
-                Aquarium​ </li> <br>
-            <br> <br> <br>
+            <br>
+            <li>Know For: ​</li>
+            <br>
+            <br>
+            <li>Sports Teams: ​</li>
+            <br>
+            <br>
+            <li>Bear Population: </li>
+            <br>
+            <br>
         </h2>
     </ul>
     <h1 id="jackcool">Street View</h1>
@@ -685,7 +596,7 @@ dddddddddddddddddoooooooooooooooooooooodddddddxxxxkkkkxxkkkOkkxdddxkOOO000000000
     <a href="javascript:void(0)"
         class="closebtn"
         onclick="closeallNav()">×</a>
-    <h1 id="sidenavhead"> Bear Den </h1>
+    <h1 id="sidenavhead24"> Past Location: The Bear Den </h1>
     <hr>
     <h2> </h2> <img
         src="https://www.visittheusa.com/sites/default/files/styles/hero_l/public/images/hero_media_image/2016-10/HERO%200_Trillium%20Lake%2C%20Mt%20Hood%2C%20Sunrise_Cropped_Web72DPI.jpg?itok=ZwbONmLR"
@@ -694,12 +605,7 @@ dddddddddddddddddoooooooooooooooooooooodddddddxxxxkkkkxxkkkOkkxdddxkOOO000000000
     <ul>
         <h1 id="jackcool">Info</h1>
         <hr>
-        <h2 id="panelinfo"> Little is
-            know about the bear den
-            besides that this is where
-            the bear is hibernating
-            before its journey to our
-            school. </h2>
+        <h2 id="panelinfo"> Little is known about the bear den besides that this is where the bear is hibernating before it journeys to our school. </h2>
 </div>
 <div class="callout"
     id="whatdoescalloutmean">
@@ -812,3 +718,4 @@ dddddddddddddddddoooooooooooooooooooooodddddddxxxxkkkkxxkkkOkkxdddxkOOO000000000
         });
     });   
 </script>
+
