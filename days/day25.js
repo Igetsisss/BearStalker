@@ -6,7 +6,7 @@ const currentlocation = "Los Angeles, California"
 const dayyy =  25
 const dailyfunfact = "https://iili.io/H8Raf24.png"
 const easyquiz = "https://kahoot.it/challenge/05989196?challenge-id=a1e77805-a03e-471b-a0fe-4b3b245e5f2c_1679937279125"
-const hardquiz = ""
+const hardquiz = "https://kahoot.it/challenge/01896191?challenge-id=963c3ee4-5e5c-4781-bf7f-3a7ff8a4798f_1682441639877"
 function initialize() {
     var map = new google.maps.Map(
         document.getElementById("map"), {
